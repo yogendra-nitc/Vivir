@@ -26,7 +26,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter{
                 search searchAct = new search();
                 return searchAct;
             case 2:
-                signup signupAct = new signup();
+                finder signupAct = new finder();
                 return signupAct;
             default :
                 return null;

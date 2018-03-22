@@ -12,7 +12,6 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password </string>
     <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_up">Register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
@@ -23,4 +22,6 @@
     </string>
     <string name="fname">First Name</string>
     <string name="lname">Last Name</string>
+    <string name="action_sign_up_short" >Register</string>
+    <string name="action_sign_up"> Register</string>
 </resources>

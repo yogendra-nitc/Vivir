@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity implements home.OnFragmentInteractionListener,
-search.OnFragmentInteractionListener,signup.OnFragmentInteractionListener {
+search.OnFragmentInteractionListener,finder.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
