@@ -1,6 +1,4 @@
 <!-- TODO: Update blank fragment layout -->
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.yogendra.vivir.signupClass">
+    tools:context="com.example.yogendra.vivir.signup">
 
     <!-- Login progress -->
     <ProgressBar
@@ -129,4 +127,5 @@
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
 
