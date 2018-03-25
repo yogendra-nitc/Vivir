@@ -1,10 +1,13 @@
 package com.example.yogendra.vivir;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements home.OnFragmentInteractionListener,
 search.OnFragmentInteractionListener,finder.OnFragmentInteractionListener {
