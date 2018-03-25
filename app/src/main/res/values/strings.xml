@@ -22,6 +22,6 @@
     </string>
     <string name="fname">First Name</string>
     <string name="lname">Last Name</string>
-    <string name="action_sign_up_short" >Register</string>
+    <string name="action_sign_up_short">Register</string>
     <string name="action_sign_up"> Register</string>
 </resources>
