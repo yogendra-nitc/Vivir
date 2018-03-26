@@ -20,7 +20,8 @@
         <activity
             android:name=".signup"
             android:label="@string/title_activity_signup"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".profileDetails"></activity>
     </application>
 
 </manifest>

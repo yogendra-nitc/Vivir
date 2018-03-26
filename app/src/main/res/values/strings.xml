@@ -25,4 +25,12 @@
     <string name="action_sign_up_short">Register</string>
     <string name="action_sign_up"> Register</string>
     <string name="search">search</string>
+    <string name="robert_pattinson">Robert Pattinson</string>
+    <string name="title_1">Title-1</string>
+    <string name="detail_3">Detail-3</string>
+    <string name="title_3">Title-3</string>
+    <string name="detail_2">Detail-2</string>
+    <string name="title_2">Title-2</string>
+    <string name="detail_1">Detail-1</string>
+    <string name="todo">TODO</string>
 </resources>
