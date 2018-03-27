@@ -69,7 +69,6 @@ public class finder extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_finder, container, false);
-       // View view = inflater.inflate(R.layout.fragment_search, container, false);
         Button getDashboard;
         getDashboard = (Button)view.findViewById(R.id.getDashboard);
         getDashboard.setOnClickListener(new View.OnClickListener(){

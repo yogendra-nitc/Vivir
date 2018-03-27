@@ -20,11 +20,12 @@
             android:name=".signup"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme" />
-        <!--activity android:name=".profileDetails" /-->
+        <!-- activity android:name=".profileDetails" / -->
         <activity
             android:name=".dashboard"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".flatDetails"></activity>
     </application>
 
 </manifest>
