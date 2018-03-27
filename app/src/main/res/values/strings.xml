@@ -33,4 +33,9 @@
     <string name="title_2">Title-2</string>
     <string name="detail_1">Detail-1</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_user_dashboard">user_dashboard</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_dashboard">dashboard</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.yogendra.vivir;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -67,9 +68,19 @@ public class finder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_finder, container, false);
+        View view = inflater.inflate(R.layout.fragment_finder, container, false);
+       // View view = inflater.inflate(R.layout.fragment_search, container, false);
+        Button getDashboard;
+        getDashboard = (Button)view.findViewById(R.id.getDashboard);
+        getDashboard.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , dashboard.class);
+                startActivity(in);
+            }
+        });
+        return view;
     }
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

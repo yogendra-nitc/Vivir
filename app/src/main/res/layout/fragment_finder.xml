@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.yogendra.vivir.finder">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,6 +12,14 @@
         android:text="Get your Home"
         android:layout_centerInParent="true"
         android:textSize="30dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click"
+        android:id="@+id/getDashboard"
+        android:clickable="true"
+        android:layout_margin="20dp"
         />
 
 </LinearLayout>

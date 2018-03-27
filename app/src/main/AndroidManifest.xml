@@ -16,12 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".propertyDetailsActivity" />
         <activity
             android:name=".signup"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme" />
-        <activity android:name=".profileDetails"></activity>
+        <!--activity android:name=".profileDetails" /-->
+        <activity
+            android:name=".dashboard"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
