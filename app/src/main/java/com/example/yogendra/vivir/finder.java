@@ -69,12 +69,20 @@ public class finder extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_finder, container, false);
-        Button getDashboard;
-        getDashboard = (Button)view.findViewById(R.id.getDashboard);
+        Button getDashboard,getFlatDetails;
+        getDashboard = view.findViewById(R.id.getDashboard);
         getDashboard.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent in = new  Intent(getActivity() , dashboard.class);
+                startActivity(in);
+            }
+        });
+        getFlatDetails = view.findViewById(R.id.getFlatDetails);
+        getFlatDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , flatDetails.class);
                 startActivity(in);
             }
         });
