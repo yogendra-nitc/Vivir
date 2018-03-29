@@ -5,16 +5,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -71,28 +65,9 @@ public class search extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        List<SearchItem>flatList = new ArrayList<>();
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home1));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home2));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home3));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home4));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home5));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home6));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home7));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home8));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home9));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home10));
         // Inflate the layout for this fragment
-
-        //View view = inflater.inflate(R.layout.fragment_search, container, false);
-        //searchResult=(RecyclerView)
-        RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_search, container, false);
-        RecyclerView searchResult;
-        searchResult = recyclerView.findViewById(R.id.searchResult);
-        searchResult.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
-        searchResult.setLayoutManager(linearLayoutManager);
-        /* Button btnmove;
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+       /* Button btnmove;
         btnmove = (Button)view.findViewById(R.id.flatDetails);
         btnmove.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -101,7 +76,7 @@ public class search extends Fragment {
                 startActivity(in);
             }
         });*/
-        return searchResult;
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
