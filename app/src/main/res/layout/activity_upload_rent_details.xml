@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yogendra.vivir.notification">
+    tools:context="com.example.yogendra.vivir.uploadRentDetails">
     <include layout="@layout/tool_bar_layout"/>
 
 </android.support.constraint.ConstraintLayout>

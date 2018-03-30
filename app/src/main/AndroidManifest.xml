@@ -42,7 +42,22 @@
             android:name=".requestDetails"
             android:label="Approve Request"
             android:theme="@style/AppTheme" />
-        <activity android:name=".notification"></activity>
+        <activity
+            android:name=".notification"
+            android:label="Notifications"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".complainList"
+            android:label="Complains"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".writeComplain"
+            android:label="Complains" />
+        <activity
+            android:name=".uploadRentDetails"
+            android:label="Upload Rent Details"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".deleteFlatRecord"></activity>
     </application>
 
 </manifest>

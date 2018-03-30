@@ -36,8 +36,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_dashboard">dashboard</string>
-    <string name="profile_details">Profile Details</string>
+    <string name="title_activity_dashboard">My Profile</string>
+    <string name="profile_details">Profile Details with profile setting</string>
     <string name="title_activity_scrolling">scrolling</string>
     <string name="title_activity_requset_details">requsetDetails</string>
 </resources>
