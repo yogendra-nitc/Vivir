@@ -3,6 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yogendra.vivir.requestList">
-    <include layout="@layout/tool_bar_layout" />
+    tools:context="com.example.yogendra.vivir.requestDetails">
+    <include layout="@layout/tool_bar_layout"/>
 </android.support.constraint.ConstraintLayout>

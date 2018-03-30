@@ -34,7 +34,15 @@
             android:label="Upload Flat Details"
             android:theme="@style/AppTheme" />
         <activity android:name=".UploadFlatImage" />
-        <activity android:name=".requestList"></activity>
+        <activity
+            android:name=".requestList"
+            android:label="Approve Request"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".requestDetails"
+            android:label="Approve Request"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".notification"></activity>
     </application>
 
 </manifest>

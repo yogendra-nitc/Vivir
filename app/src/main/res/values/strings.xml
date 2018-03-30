@@ -39,4 +39,5 @@
     <string name="title_activity_dashboard">dashboard</string>
     <string name="profile_details">Profile Details</string>
     <string name="title_activity_scrolling">scrolling</string>
+    <string name="title_activity_requset_details">requsetDetails</string>
 </resources>
