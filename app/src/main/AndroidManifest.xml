@@ -26,7 +26,15 @@
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" />
         <activity android:name=".flatDetails" />
-        <activity android:name=".RegUserSearch"></activity>
+        <activity
+            android:name=".RegUserSearch"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UploadFlatDetails"
+            android:label="Upload Flat Details"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".UploadFlatImage" />
+        <activity android:name=".requestList"></activity>
     </application>
 
 </manifest>

@@ -68,8 +68,9 @@ public class finder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        // Button-1
         View view = inflater.inflate(R.layout.fragment_finder, container, false);
-        Button getDashboard,getFlatDetails;
+        Button getDashboard,getFlatDetails,uploadFlatDetails, regUserSearch, uploadFlatImages;
         getDashboard = view.findViewById(R.id.getDashboard);
         getDashboard.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -78,11 +79,43 @@ public class finder extends Fragment {
                 startActivity(in);
             }
         });
+
+        //Button-2
         getFlatDetails = view.findViewById(R.id.getFlatDetails);
         getFlatDetails.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent in = new  Intent(getActivity() , flatDetails.class);
+                startActivity(in);
+            }
+        });
+
+        //Button-3
+        uploadFlatDetails = view.findViewById(R.id.upload_flat_details);
+        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , UploadFlatDetails.class);
+                startActivity(in);
+            }
+        });
+
+        // Button-4
+        regUserSearch = view.findViewById(R.id.reg_user_search);
+        regUserSearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , RegUserSearch.class);
+                startActivity(in);
+            }
+        });
+
+        //Button-5
+        uploadFlatImages = view.findViewById(R.id.upload_flat_images);
+        uploadFlatImages.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , UploadFlatImage.class);
                 startActivity(in);
             }
         });
