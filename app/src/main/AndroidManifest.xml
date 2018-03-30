@@ -57,7 +57,21 @@
             android:name=".uploadRentDetails"
             android:label="Upload Rent Details"
             android:theme="@style/AppTheme" />
-        <activity android:name=".deleteFlatRecord"></activity>
+        <activity
+            android:name=".deleteFlatRecord"
+            android:label="My Flats"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".updateFlatRecord"
+            android:label="Update Flat Details"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".profileSetting"
+            android:label="Set Profile"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".changePassword"
+            android:theme="@style/AppTheme"
+            android:label="Change Password"/>
     </application>
 
 </manifest>
