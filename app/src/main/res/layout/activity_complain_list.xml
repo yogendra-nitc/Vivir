@@ -5,6 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.yogendra.vivir.complainList">
-    <include layout="@layout/tool_bar_layout"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -172,7 +172,7 @@ public class finder extends Fragment {
 
         //Right side Button-2
         Button requestList;
-        requestList = view.findViewById(R.id.requestDetails);
+        requestList = view.findViewById(R.id.requestList);
         requestList.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -183,7 +183,7 @@ public class finder extends Fragment {
 
         //Right side Button-3
         Button updateFlatRecord;
-        updateFlatRecord = view.findViewById(R.id.requestDetails);
+        updateFlatRecord = view.findViewById(R.id.updateFlatRecord);
         updateFlatRecord.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -216,7 +216,7 @@ public class finder extends Fragment {
         //Right side Button-4
         Button rentDetails;
         rentDetails = view.findViewById(R.id.upload_rent_details);
-        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+        rentDetails.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent in = new  Intent(getActivity() , uploadRentDetails.class);
@@ -226,7 +226,7 @@ public class finder extends Fragment {
         //Right side Button-4
         Button writeComplain;
        writeComplain = view.findViewById(R.id.writeComplain);
-        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+        writeComplain.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent in = new  Intent(getActivity() , writeComplain.class);

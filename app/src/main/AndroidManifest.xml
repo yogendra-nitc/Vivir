@@ -53,11 +53,11 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".complainList"
-            android:label="Complains"
+            android:label="Complaints"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".writeComplain"
-            android:label="Complains"
+            android:label="Complaints"
             android:theme="@style/RestAppTheme"/>
         <activity
             android:name=".uploadRentDetails"
