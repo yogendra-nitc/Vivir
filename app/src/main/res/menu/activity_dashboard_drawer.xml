@@ -18,8 +18,8 @@
             android:title="Fill Rent Details" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
+            android:title="Logout" />
     </group>
 
     <item android:title="Communicate">

@@ -25,52 +25,58 @@
             android:name=".dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" />
-        <activity android:name=".flatDetails" />
+        <activity android:name=".flatDetails"
+            android:label="Flat Details"
+            android:theme="@style/RestAppTheme"/>
         <activity
             android:name=".RegUserSearch"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".UploadFlatDetails"
             android:label="Upload Flat Details"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".UploadFlatImage" />
+            android:theme="@style/RestAppTheme" />
+        <activity android:name=".UploadFlatImage"
+            android:label="Upload Flat image"
+            android:theme="@style/RestAppTheme"
+            />
         <activity
             android:name=".requestList"
             android:label="Approve Request"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".requestDetails"
             android:label="Approve Request"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".notification"
             android:label="Notifications"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".complainList"
             android:label="Complains"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".writeComplain"
-            android:label="Complains" />
+            android:label="Complains"
+            android:theme="@style/RestAppTheme"/>
         <activity
             android:name=".uploadRentDetails"
             android:label="Upload Rent Details"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".deleteFlatRecord"
             android:label="My Flats"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".updateFlatRecord"
             android:label="Update Flat Details"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".profileSetting"
             android:label="Set Profile"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/RestAppTheme" />
         <activity android:name=".changePassword"
-            android:theme="@style/AppTheme"
+            android:theme="@style/RestAppTheme"
             android:label="Change Password"/>
     </application>
 

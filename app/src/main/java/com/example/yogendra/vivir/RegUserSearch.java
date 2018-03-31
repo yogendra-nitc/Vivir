@@ -31,11 +31,11 @@ public class RegUserSearch extends AppCompatActivity {
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home3));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home4));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home5));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home6));
+        flatList.add(new SearchItem("Basant Kunj Flat-2, Indira Nagar, Lucknow", R.drawable.home6));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home7));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home8));
+        flatList.add(new SearchItem("Basant Colony Flat-2, Indira Nagar, Lucknow", R.drawable.home8));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home9));
-        flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home10));
+        flatList.add(new SearchItem("Dev Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home10));
 
 
         searchResult = findViewById(R.id.searchResult);
