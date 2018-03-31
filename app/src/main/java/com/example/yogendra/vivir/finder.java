@@ -70,7 +70,31 @@ public class finder extends Fragment {
         // Inflate the layout for this fragment
         // Button-1
         View view = inflater.inflate(R.layout.fragment_finder, container, false);
-        Button getDashboard,getFlatDetails,uploadFlatDetails, regUserSearch, uploadFlatImages;
+
+        //Left side Button-1
+        Button changePassword;
+        changePassword = view.findViewById(R.id.changePassword);
+        changePassword.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , changePassword.class);
+                startActivity(in);
+            }
+        });
+
+        //Left side Button-2
+        Button complainList;
+        complainList = view.findViewById(R.id.complainList);
+        complainList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , complainList.class);
+                startActivity(in);
+            }
+        });
+
+        //Left side Button-3
+        Button getDashboard;
         getDashboard = view.findViewById(R.id.getDashboard);
         getDashboard.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -80,7 +104,19 @@ public class finder extends Fragment {
             }
         });
 
-        //Button-2
+        //Left side Button-4
+        Button deleteFlatRecord;
+        deleteFlatRecord = view.findViewById(R.id.deleteFlatRecord);
+        deleteFlatRecord.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , deleteFlatRecord.class);
+                startActivity(in);
+            }
+        });
+
+        //Left-side Button-5
+        Button getFlatDetails;
         getFlatDetails = view.findViewById(R.id.getFlatDetails);
         getFlatDetails.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -90,17 +126,29 @@ public class finder extends Fragment {
             }
         });
 
-        //Button-3
-        uploadFlatDetails = view.findViewById(R.id.upload_flat_details);
-        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+        //Left side Button-6
+        Button notification;
+        notification = view.findViewById(R.id.notifications);
+        notification.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , UploadFlatDetails.class);
+                Intent in = new  Intent(getActivity() , notification.class);
                 startActivity(in);
             }
         });
 
-        // Button-4
+        //Left side Button-7
+        Button setProfile;
+        setProfile = view.findViewById(R.id.setProfile);
+        setProfile.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , setProfile.class);
+                startActivity(in);
+            }
+        });
+        // Left-side Button-8
+        Button regUserSearch;
         regUserSearch = view.findViewById(R.id.reg_user_search);
         regUserSearch.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -110,12 +158,78 @@ public class finder extends Fragment {
             }
         });
 
-        //Button-5
+
+        //Right side Button-1
+        Button requestDetails;
+        requestDetails = view.findViewById(R.id.requestDetails);
+        requestDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , requestDetails.class);
+                startActivity(in);
+            }
+        });
+
+        //Right side Button-2
+        Button requestList;
+        requestList = view.findViewById(R.id.requestDetails);
+        requestList.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , requestList.class);
+                startActivity(in);
+            }
+        });
+
+        //Right side Button-3
+        Button updateFlatRecord;
+        updateFlatRecord = view.findViewById(R.id.requestDetails);
+        updateFlatRecord.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , updateFlatRecord.class);
+                startActivity(in);
+            }
+        });
+
+        //Right side Button-4
+        Button uploadFlatDetails;
+        uploadFlatDetails = view.findViewById(R.id.upload_flat_details);
+        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , uploadFlatDetails.class);
+                startActivity(in);
+            }
+        });
+
+        //Right side Button-5
+        Button uploadFlatImages;
         uploadFlatImages = view.findViewById(R.id.upload_flat_images);
         uploadFlatImages.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , UploadFlatImage.class);
+                Intent in = new  Intent(getActivity() , uploadFlatImage.class);
+                startActivity(in);
+            }
+        });
+        //Right side Button-4
+        Button rentDetails;
+        rentDetails = view.findViewById(R.id.upload_rent_details);
+        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , uploadRentDetails.class);
+                startActivity(in);
+            }
+        });
+        //Right side Button-4
+        Button writeComplain;
+       writeComplain = view.findViewById(R.id.writeComplain);
+        uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , writeComplain.class);
                 startActivity(in);
             }
         });

@@ -20,7 +20,7 @@
             android:name=".signup"
             android:label="@string/title_activity_signup"
             android:theme="@style/AppTheme" />
-        <!-- activity android:name=".profileDetails" / -->
+
         <activity
             android:name=".dashboard"
             android:label="@string/title_activity_dashboard"
@@ -32,10 +32,10 @@
             android:name=".RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".UploadFlatDetails"
+            android:name=".uploadFlatDetails"
             android:label="Upload Flat Details"
             android:theme="@style/RestAppTheme" />
-        <activity android:name=".UploadFlatImage"
+        <activity android:name=".uploadFlatImage"
             android:label="Upload Flat image"
             android:theme="@style/RestAppTheme"
             />
@@ -72,7 +72,7 @@
             android:label="Update Flat Details"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".profileSetting"
+            android:name=".setProfile"
             android:label="Set Profile"
             android:theme="@style/RestAppTheme" />
         <activity android:name=".changePassword"
