@@ -102,8 +102,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                 return params;
             }
         };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     @Override
