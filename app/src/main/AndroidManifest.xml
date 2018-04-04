@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yogendra.vivir">
-<uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,15 +26,15 @@
         <activity
             android:name=".signup"
             android:label="@string/title_activity_signup"
-            android:theme="@style/AppTheme" />
-
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" />
-        <activity android:name=".flatDetails"
+        <activity
+            android:name=".flatDetails"
             android:label="Flat Details"
-            android:theme="@style/RestAppTheme"/>
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".RegUserSearch"
             android:theme="@style/RestAppTheme" />
@@ -35,10 +42,10 @@
             android:name=".uploadFlatDetails"
             android:label="Upload Flat Details"
             android:theme="@style/RestAppTheme" />
-        <activity android:name=".uploadFlatImage"
+        <activity
+            android:name=".uploadFlatImage"
             android:label="Upload Flat image"
-            android:theme="@style/RestAppTheme"
-            />
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".requestList"
             android:label="Approve Request"
@@ -58,7 +65,7 @@
         <activity
             android:name=".writeComplain"
             android:label="Complaints"
-            android:theme="@style/RestAppTheme"/>
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".uploadRentDetails"
             android:label="Upload Rent Details"
@@ -75,9 +82,10 @@
             android:name=".setProfile"
             android:label="Set Profile"
             android:theme="@style/RestAppTheme" />
-        <activity android:name=".changePassword"
-            android:theme="@style/RestAppTheme"
-            android:label="Change Password"/>
+        <activity
+            android:name=".changePassword"
+            android:label="Change Password"
+            android:theme="@style/RestAppTheme" />
     </application>
 
 </manifest>

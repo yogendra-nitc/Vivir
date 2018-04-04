@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -68,15 +67,16 @@ public class home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_home, container, false);
-        FloatingActionButton signupBtnMove;
-        signupBtnMove = (FloatingActionButton)view.findViewById(R.id.floatingActionButton);
-        signupBtnMove.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent in = new  Intent(getActivity() , signup.class);
-                startActivity(in);
-            }
-        });
+        FloatingActionButton floatingActionButton;
+        floatingActionButton = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
+
+            floatingActionButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent in = new  Intent(getActivity() , signup.class);
+                    startActivity(in);
+                }
+            });
         return view;
     }
 

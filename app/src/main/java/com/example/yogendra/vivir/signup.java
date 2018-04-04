@@ -48,19 +48,6 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
 
         registerButton.setOnClickListener(this);
 
-        // Alredy registered
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton signupBtnMove;
-        signupBtnMove = (FloatingActionButton)findViewById(R.id.floatingActionButton);
-        signupBtnMove.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent in = new  Intent(signup.this , home.class);
-                startActivity(in);
-            }
-        });
     }
 
     public void registerUser(){
@@ -87,12 +74,12 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                     }
                 },
                 new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                progressDialog.hide();
-                Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
-            }
-        }){
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
+                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
