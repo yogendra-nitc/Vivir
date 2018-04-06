@@ -5,6 +5,6 @@ package com.example.yogendra.vivir;
  */
 
 public class defConstant {
-    public static final String ROOT_URL = "https://vivir18.000webhostapp.com/Android/v1/";
+    public static final String ROOT_URL = "https://vivir18.000webhostapp.com/vivir/includes/";
     public  static  final String URL_SIGNUP = ROOT_URL + "userSignup.php";
 }
