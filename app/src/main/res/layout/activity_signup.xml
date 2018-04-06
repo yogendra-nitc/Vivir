@@ -31,7 +31,7 @@
             android:orientation="vertical">
             <TextView android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get Registerd..."
+                android:text="@string/get_registerd"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
                 android:textStyle="italic"
@@ -45,7 +45,7 @@
                     android:id="@+id/fname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="First Name"
+                    android:hint="@string/first_name"
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -59,7 +59,7 @@
                     android:id="@+id/lname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Last Name"
+                    android:hint="@string/last_name"
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -79,7 +79,6 @@
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -99,12 +98,12 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/email_signup_button"
+                android:id="@+id/email_register_btn"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Register"
+                android:text="@string/register"
                 android:textColor="#FFFFFF"
                 android:background="@color/colorPrimary"
                 android:textStyle="bold" />

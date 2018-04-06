@@ -41,4 +41,8 @@
     <string name="title_activity_scrolling">scrolling</string>
     <string name="title_activity_requset_details">requsetDetails</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="register">Register</string>
+    <string name="get_registerd">Get Registerd...</string>
 </resources>
