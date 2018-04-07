@@ -45,4 +45,7 @@
     <string name="last_name">Last Name</string>
     <string name="register">Register</string>
     <string name="get_registerd">Get Registerd...</string>
+    <string name="register_as">Register as :</string>
+    <string name="tenant">Tenant</string>
+    <string name="owner">Owner</string>
 </resources>

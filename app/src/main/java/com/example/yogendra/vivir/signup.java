@@ -1,5 +1,6 @@
 package com.example.yogendra.vivir;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -30,6 +33,8 @@ import java.util.Map;
 public class signup extends AppCompatActivity implements View.OnClickListener{
 
     private EditText editTextFname, editTextLname,editTextEmail, editTextPassword;
+    private RadioGroup usertType_rg;
+    private RadioButton userType;
     private Button registerButton;
     private ProgressDialog progressDialog;
 
@@ -41,6 +46,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         editTextLname = (EditText)findViewById(R.id.lname);
         editTextEmail = (EditText)findViewById(R.id.email);
         editTextPassword = (EditText)findViewById(R.id.password);
+        usertType_rg = (RadioGroup)findViewById(R.id.userType_rg);
 
         registerButton = (Button)findViewById(R.id.email_register_btn);
 
@@ -55,7 +61,11 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
         String lname = editTextLname.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
-        final String name = fname + lname;
+        final String name = fname +" "+ lname;
+        int selected_id = usertType_rg.getCheckedRadioButtonId();
+        userType = (RadioButton)findViewById(selected_id);
+        final String userT = userType.getText().toString().toLowerCase();
+
         progressDialog.setMessage("Registering user...");
         progressDialog.show();
 
@@ -86,6 +96,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                 params.put("name",name);
                 params.put("email",email);
                 params.put("password",password);
+                params.put("userType",userT);
                 return params;
             }
         };
