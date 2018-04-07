@@ -2,7 +2,7 @@
 include('Database.php');
     class userStart extends Database{
         
-        // user signup
+         // user signup
         public function userRegistration($name, $email,$password,$userType){
             $sql = "SELECT * FROM user WHERE email = '$email'";
             $result = $this->connect()->query($sql);
@@ -42,16 +42,44 @@ include('Database.php');
             }
         }
 
-        // user login
+        // USER LOGIN
         public function userLogin($email, $password)
         {
-            $sql = "SELECT * FROM user WHERE email = '$email' and password = '$password'";
+            $sql = "SELECT email, password FROM user WHERE email = '$email'";
             $result = $this->connect()->query()($sql);
             $numRows = $result->num_rows;
+
+            // CHECKING FOR REGISTRATION
+
             if(numRows>0)
             {
-                $sql = "SELECT * FROM tenant where email = '$email'";
+                $row = $result->fetch_array(MYSQLI_BOTH);
+                $DbEmail = $row['email'];
+                $DbPassword = $row['password'];
+
+                // CHECKING FOR WRONG PASSWORD
+
+                if(($DbEmail == $email) and ($DbPassword == $password))
+                    return 2;
+                else
+                    return 1;
             }
+            else
+            {
+                return 0;
+            }
+        }
+
+        // GET USER DATA AFTER VALID LOGIN
+        public function getAuthUserData($email)
+        {
+            $sql = "SELECT * FROM user where email = '$email'";
+            $result = $this->connect()->query()($sql);
+            while($row = $result->fetch_assoc())
+            {
+                $data[] = $row; 
+            }
+            return $data;
         }
     }
 
