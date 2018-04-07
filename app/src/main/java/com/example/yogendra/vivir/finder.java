@@ -225,7 +225,7 @@ public class finder extends Fragment {
         });
         //Right side Button-4
         Button writeComplain;
-       writeComplain = view.findViewById(R.id.writeComplain);
+        writeComplain = view.findViewById(R.id.writeComplain);
         writeComplain.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

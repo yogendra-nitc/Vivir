@@ -92,17 +92,63 @@ public class user_dashboard extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_search) {
-            // Handle the camera action
-        } else if (id == R.id.nav_notification) {
+        if (id == R.id.nav_search)
+        {
+            Button regUserSearch;
+            regUserSearch = view.findViewById(R.id.reg_user_search);
+            regUserSearch.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent in = new  Intent(user_dashboard.this , RegUserSearch.class);
+                    startActivity(in);
+                }
+            });
+        }
+        else if (id == R.id.nav_notification)
+        {
+            Button notification;
+            notification = view.findViewById(R.id.notifications);
+            notification.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent in = new  Intent(user_dashboard.this , notification.class);
+                    startActivity(in);
+                }
+            });
 
-        } else if (id == R.id.nav_rent_upload) {
+        }
+        else if (id == R.id.nav_rent_upload)
+        {
+            Button rentDetails;
+            rentDetails = view.findViewById(R.id.upload_rent_details);
+            rentDetails.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent in = new  Intent(user_dashboard.this , uploadRentDetails.class);
+                    startActivity(in);
+                }
+            });
+        }
+        else if (id == R.id.nav_manage)
+        {
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_query) {
-
-        } else if (id == R.id.nav_leaving) {
+        }
+        else if (id == R.id.nav_query)
+        {
+            Button writeComplain;
+            writeComplain = view.findViewById(R.id.writeComplain);
+            writeComplain.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent in = new  Intent(user_dashboard.this , complainList.class);
+                    startActivity(in);
+                }
+            });
+        }
+        else if (id == R.id.nav_leaving)
+        {
 
         }
 
