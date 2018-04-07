@@ -48,4 +48,5 @@
     <string name="register_as">Register as :</string>
     <string name="tenant">Tenant</string>
     <string name="owner">Owner</string>
+    <string name="title_activity_owner_dashboard">OwnerDashboard</string>
 </resources>

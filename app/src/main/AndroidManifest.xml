@@ -28,7 +28,7 @@
             android:label="@string/title_activity_signup"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".dashboard"
+            android:name=".user_dashboard"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme" />
         <activity
@@ -86,6 +86,10 @@
             android:name=".changePassword"
             android:label="Change Password"
             android:theme="@style/RestAppTheme" />
+        <activity
+            android:name=".OwnerDashboard"
+            android:label="@string/title_activity_owner_dashboard"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

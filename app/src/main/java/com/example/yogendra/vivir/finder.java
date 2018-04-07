@@ -99,7 +99,7 @@ public class finder extends Fragment {
         getDashboard.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , dashboard.class);
+                Intent in = new  Intent(getActivity() , user_dashboard.class);
                 startActivity(in);
             }
         });
