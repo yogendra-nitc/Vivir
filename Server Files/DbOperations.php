@@ -2,8 +2,8 @@
 include('Database.php');
     class userStart extends Database{
         
-        // user signup
-        public function userRegistration($name, $email,$password){
+         // user signup
+        public function userRegistration($name, $email,$password,$userType){
             $sql = "SELECT * FROM user WHERE email = '$email'";
             $result = $this->connect()->query($sql);
             $numRows = $result->num_rows;
@@ -13,14 +13,36 @@ include('Database.php');
             }
             else
             {
-                $rdate = "2018-04-06";
-                $sql = "INSERT INTO user(email, password,rdate)VALUES('$email','$password','$rdate')";
+                $sql = "INSERT INTO user(email, password,name,userType)VALUES('$email','$password','$name','$userType')";
                 $result = $this->connect()->query($sql);
+                
+                // id generation
+                $i=0; $temp="v";
+                while($email[$i]!='@')
+                {
+                    $temp = $temp.$email[$i];
+                    $i = $i + 1;
+                }
+                echo "$temp";
+                if($userType == "tenant")
+                {
+                    $rdate = date("Y-m-d");
+                    $tid = $temp."t";
+                    $sql = "INSERT INTO tenant(tid,email,rdate)VALUES('$tid','$email','$rdate')";
+                    $result = $this->connect()->query($sql);
+                }
+                else if($userType == "owner")
+                {
+                    $rdate = date("Y-m-d");
+                    $oid = $temp."o";
+                    $sql = "INSERT INTO owner(oid,email,rdate)VALUES('$oid','$email','$rdate')";
+                    $result = $this->connect()->query($sql);
+                }
                 return 1;
             }
         }
 
-        // user login
+        // USER LOGIN
         public function userLogin($email, $password)
         {
             $sql = "SELECT email, password FROM user WHERE email = '$email'";
@@ -48,7 +70,7 @@ include('Database.php');
             }
         }
 
-        // getUser Data after login
+        // GET USER DATA AFTER VALID LOGIN
         public function getAuthUserData($email)
         {
             $sql = "SELECT * FROM user where email = '$email'";
