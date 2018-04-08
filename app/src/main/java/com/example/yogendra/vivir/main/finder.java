@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.owner.uploadFlatImage;
 import com.example.yogendra.vivir.tenant.RegUserSearch;
 import com.example.yogendra.vivir.tenant.uploadRentDetails;
@@ -111,6 +112,16 @@ public class finder extends Fragment {
             }
         });
 
+        //Left side Button-3
+        Button getOwnerDashboard;
+        getDashboard = view.findViewById(R.id.getOwnerDashboard);
+        getDashboard.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent in = new  Intent(getActivity() , OwnerDashboard.class);
+                startActivity(in);
+            }
+        });
         //Left side Button-4
         Button deleteFlatRecord;
         deleteFlatRecord = view.findViewById(R.id.deleteFlatRecord);

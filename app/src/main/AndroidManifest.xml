@@ -93,7 +93,7 @@
             android:parentActivityName=".tenant.user_dashboard"/>
         <activity
             android:name=".owner.OwnerDashboard"
-            android:label="@string/title_activity_owner_dashboard"
+            android:label="My Profile"
             android:theme="@style/AppTheme"></activity>
     </application>
 

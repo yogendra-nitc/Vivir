@@ -68,6 +68,12 @@ public class user_dashboard extends AppCompatActivity
         return true;
     }
 
+    // Edit Profile
+    public void EditProfile(){
+        Intent in = new  Intent(user_dashboard.this , com.example.yogendra.vivir.user.setProfile.class);
+        startActivity(in);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

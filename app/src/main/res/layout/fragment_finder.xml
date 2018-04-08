@@ -40,6 +40,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:text="Owner Dashboard"
+            android:id="@+id/getOwnerDashboard"
+            android:clickable="true"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:text="Delete Flat Record"
             android:id="@+id/deleteFlatRecord"
             android:clickable="true"
