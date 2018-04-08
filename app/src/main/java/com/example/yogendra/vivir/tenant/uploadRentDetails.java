@@ -11,5 +11,7 @@ public class uploadRentDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_rent_details);
+        //Adding back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

@@ -37,6 +37,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         editTextFname = (EditText)findViewById(R.id.fname);
         editTextLname = (EditText)findViewById(R.id.lname);
         editTextEmail = (EditText)findViewById(R.id.email);

@@ -29,6 +29,9 @@ public class RegUserSearch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg_user_search);
+        //Back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home1));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home2));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home3));

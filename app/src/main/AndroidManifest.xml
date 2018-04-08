@@ -25,6 +25,7 @@
         </activity>
         <activity
             android:name=".user.signup"
+            android:parentActivityName=".main.MainActivity"
             android:label="@string/title_activity_signup"
             android:theme="@style/RestAppTheme" />
         <activity
@@ -37,6 +38,7 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.RegUserSearch"
+            android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.uploadFlatDetails"
@@ -52,6 +54,7 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.requestDetails"
+            android:parentActivityName=".user.requestList"
             android:label="Approve Request"
             android:theme="@style/RestAppTheme" />
         <activity
@@ -68,6 +71,7 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.uploadRentDetails"
+            android:parentActivityName=".tenant.user_dashboard"
             android:label="Upload Rent Details"
             android:theme="@style/RestAppTheme" />
         <activity
@@ -85,7 +89,8 @@
         <activity
             android:name=".user.changePassword"
             android:label="Change Password"
-            android:theme="@style/RestAppTheme" />
+            android:theme="@style/RestAppTheme"
+            android:parentActivityName=".tenant.user_dashboard"/>
         <activity
             android:name=".owner.OwnerDashboard"
             android:label="@string/title_activity_owner_dashboard"
