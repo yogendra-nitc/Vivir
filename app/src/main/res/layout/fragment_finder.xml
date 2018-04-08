@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.example.yogendra.vivir.finder">
+    tools:context="com.example.yogendra.vivir.main.finder">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView

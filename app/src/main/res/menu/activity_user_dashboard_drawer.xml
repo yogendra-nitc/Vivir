@@ -17,7 +17,7 @@
             android:icon="@android:drawable/stat_sys_upload"
             android:title="Fill Rent Details" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_logout"
             android:icon="@drawable/ic_power_settings_new_black_24dp"
             android:title="Logout" />
     </group>
@@ -27,7 +27,7 @@
             <item
                 android:id="@+id/nav_query"
                 android:icon="@android:drawable/stat_notify_chat"
-                android:title="Query" />
+                android:title="Complaints" />
             <item
                 android:id="@+id/nav_leaving"
                 android:icon="@android:drawable/ic_dialog_alert"
