@@ -69,7 +69,7 @@ public class user_dashboard extends AppCompatActivity
     }
 
     // Edit Profile
-    public void EditProfile(){
+    public void EditProfile(View v){
         Intent in = new  Intent(user_dashboard.this , com.example.yogendra.vivir.user.setProfile.class);
         startActivity(in);
     }

@@ -57,7 +57,7 @@ public class OwnerDashboard extends AppCompatActivity
     }
 
     //Edit Profile
-    public void EditProfile(){
+    public void EditProfile(View view){
         Intent in = new  Intent(OwnerDashboard.this , com.example.yogendra.vivir.user.setProfile.class);
         startActivity(in);
     }
