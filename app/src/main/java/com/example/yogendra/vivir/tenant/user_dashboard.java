@@ -31,17 +31,7 @@ public class user_dashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button btn;
-        btn = (Button)findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in;
-                in = new Intent(user_dashboard.this, signup.class);
-                startActivity(in);
-            }
-        });
-
+/*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +40,7 @@ public class user_dashboard extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

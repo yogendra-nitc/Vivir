@@ -17,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.network.RequestHandler;
-import com.example.yogendra.vivir.databasee.defConstant;
+import com.example.yogendra.vivir.database.defConstant;
 
 import org.json.JSONException;
 import org.json.JSONObject;

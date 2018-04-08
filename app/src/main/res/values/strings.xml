@@ -49,4 +49,6 @@
     <string name="tenant">Tenant</string>
     <string name="owner">Owner</string>
     <string name="title_activity_owner_dashboard">OwnerDashboard</string>
+    <string name="text">text :</string>
+    <string name="todo">TODO</string>
 </resources>

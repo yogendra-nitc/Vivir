@@ -1,4 +1,4 @@
-package com.example.yogendra.vivir.databasee;
+package com.example.yogendra.vivir.database;
 
 /**
  * Created by yogendra on 3/4/18.
