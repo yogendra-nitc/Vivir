@@ -11,19 +11,21 @@
         	{
         		$checkLoginAuth = new userStart();
         		$result = $checkLoginAuth->userLogin($_POST['email'], $_POST['password']);
-        		if($result == 1)
+        		if($result == 2)
         		{
         			$userDetails = $checkLoginAuth->getAuthUserData($_POST['email']); 
-        			$response['error'] = false;
-        			$response['email'] = $userDetails['email'];
-        			$response['name'] = $userDetails['name'];
-        			$response['userType'] = $userDetails['userType'];
-        			$response['image'] = $userDetails['image'];
-        			$response['city'] = $userDetails['city'];
-        			$response['state'] = $response['state'];
-        			return $response;
+        			foreach($userDetails as $data)
+        			{
+        				$response['error'] = false;
+        				$response['email'] = $data['email'];
+        				$response['name'] = $data['name'];
+        				$response['userType'] = $data['userType'];
+        				$response['image'] = $data['image'];
+        				$response['city'] = $data['city'];
+        				$response['state'] = $data['state'];
+        			}
         		}
-        		else if($result==2)
+        		else if($result==1)
         		{
         			$response['error'] = true;
         			$response['message'] = "Incorrect login credentials";
@@ -34,6 +36,18 @@
         			$response['message'] = "Sorry..!..you are not registered";
         		}
         	}
+        	else
+            {
+                $response['error'] = true; 
+                $response['message'] = "Required fields are missing";
+            }
     }
+    else
+    {
+        $response['error'] = true; 
+        $response['message'] = "Invalid Request";
+    }
+ 
+    echo json_encode($response);
 
 ?>

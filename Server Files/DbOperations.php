@@ -2,7 +2,8 @@
 include('Database.php');
     class userStart extends Database{
         
-         // user signup
+// ********** METHOD FOR USER SIGNUP **********
+
         public function userRegistration($name, $email,$password,$userType){
             $sql = "SELECT * FROM user WHERE email = '$email'";
             $result = $this->connect()->query($sql);
@@ -42,22 +43,23 @@ include('Database.php');
             }
         }
 
-        // USER LOGIN
+// ********** METHOD FOR USER LOGIN **************
+
         public function userLogin($email, $password)
         {
             $sql = "SELECT email, password FROM user WHERE email = '$email'";
-            $result = $this->connect()->query()($sql);
+            $result = $this->connect()->query($sql);
             $numRows = $result->num_rows;
 
             // CHECKING FOR REGISTRATION
 
-            if(numRows>0)
+            if($numRows>0)
             {
                 $row = $result->fetch_array(MYSQLI_BOTH);
                 $DbEmail = $row['email'];
                 $DbPassword = $row['password'];
 
-                // CHECKING FOR WRONG PASSWORD
+            // CHECKING FOR WRONG PASSWORD
 
                 if(($DbEmail == $email) and ($DbPassword == $password))
                     return 2;
@@ -70,15 +72,14 @@ include('Database.php');
             }
         }
 
-        // GET USER DATA AFTER VALID LOGIN
+//******* METHOD FOR GETTING AUTHENTIC USER DATA *******
+
         public function getAuthUserData($email)
         {
             $sql = "SELECT * FROM user where email = '$email'";
-            $result = $this->connect()->query()($sql);
-            while($row = $result->fetch_assoc())
-            {
-                $data[] = $row; 
-            }
+            $result = $this->connect()->query($sql);
+            $row = $result->fetch_assoc();
+            $data[] = $row; 
             return $data;
         }
     }
