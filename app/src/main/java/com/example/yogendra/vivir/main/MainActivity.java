@@ -1,5 +1,6 @@
 package com.example.yogendra.vivir.main;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,8 @@ import android.os.Bundle;
 
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.adapter.PagerAdapter;
+import com.example.yogendra.vivir.database.SharedPrefManager;
+import com.example.yogendra.vivir.tenant.user_dashboard;
 import com.example.yogendra.vivir.user.home;
 
 public class MainActivity extends AppCompatActivity implements home.OnFragmentInteractionListener,
@@ -17,6 +20,14 @@ public class MainActivity extends AppCompatActivity implements home.OnFragmentIn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //USER LOGIN
+        if(!SharedPrefManager.getInstance(this).isLoggedin())
+        {
+            finish();
+            startActivity(new Intent(this , user_dashboard.class));
+            return;
+        }
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));

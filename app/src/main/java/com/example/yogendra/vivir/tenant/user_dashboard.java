@@ -16,9 +16,11 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.user.complainList;
+import com.example.yogendra.vivir.user.home;
 import com.example.yogendra.vivir.user.notification;
 import com.example.yogendra.vivir.user.signup;
 
@@ -31,6 +33,13 @@ public class user_dashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //USER LOGIN
+        if(!SharedPrefManager.getInstance(this).isLoggedin())
+        {
+            finish();
+            startActivity(new Intent(this , home.class));
+        }
 /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

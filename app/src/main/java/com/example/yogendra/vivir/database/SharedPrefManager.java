@@ -61,5 +61,18 @@ public class SharedPrefManager
         return true;
     }
 
+    public String getKeyEmail()
+    {
+        return email;
+    }
+    public String getKeyUtype()
+    {
+        return userType;
+    }
+    public String getKeyName()
+    {
+        return userName;
+    }
+
 
 }

@@ -23,6 +23,7 @@ import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
+import com.example.yogendra.vivir.tenant.user_dashboard;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -90,6 +91,13 @@ public class home extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_home, container, false);
+        //USER LOGIN
+        if(!SharedPrefManager.getInstance(getActivity()).isLoggedin())
+        {
+            onDetach();
+            startActivity(new Intent(getActivity() , user_dashboard.class));
+            onStop();
+        }
 
         editTextEmail = (EditText)view.findViewById(R.id.email);
         editTextPassword = (EditText)view.findViewById(R.id.password);
@@ -136,11 +144,9 @@ public class home extends Fragment implements View.OnClickListener {
                                                 obj.getString("name"),
                                                 obj.getString("userType")
                                         );
-                                Toast.makeText(
-                                        getContext(),
-                                        "user login successful",
-                                        Toast.LENGTH_LONG
-                                ).show();
+                                Intent in = new Intent(getContext(), user_dashboard.class);
+                                startActivity(in);
+                                onDetach();
                             }else{
                                 Toast.makeText(
                                         getContext(),
@@ -152,6 +158,7 @@ public class home extends Fragment implements View.OnClickListener {
                         }catch (JSONException e){
                             e.printStackTrace();
                         }
+
                     }
                 },
                 new Response.ErrorListener()
@@ -184,6 +191,7 @@ public class home extends Fragment implements View.OnClickListener {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
     }
 
     @Override
