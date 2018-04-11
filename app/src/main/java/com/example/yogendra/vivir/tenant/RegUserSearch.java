@@ -10,13 +10,27 @@ package com.example.yogendra.vivir.tenant;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.EditText;
+        import android.widget.RadioButton;
         import android.widget.TextView;
+        import android.widget.Toast;
 
+        import com.android.volley.AuthFailureError;
+        import com.android.volley.Request;
+        import com.android.volley.Response;
+        import com.android.volley.VolleyError;
+        import com.android.volley.toolbox.StringRequest;
         import com.example.yogendra.vivir.R;
         import com.example.yogendra.vivir.adapter.SearchActivityAdapter;
+        import com.example.yogendra.vivir.database.defConstant;
+        import com.example.yogendra.vivir.network.RequestHandler;
+
+        import org.json.JSONException;
+        import org.json.JSONObject;
 
         import java.util.ArrayList;
+        import java.util.HashMap;
         import java.util.List;
+        import java.util.Map;
 
 public class RegUserSearch extends AppCompatActivity {
     SearchView searchView;
@@ -50,6 +64,29 @@ public class RegUserSearch extends AppCompatActivity {
         searchResult.setLayoutManager(linearLayoutManager);
         adapter = new SearchActivityAdapter(flatList, RegUserSearch.this);
         searchResult.setAdapter(adapter);
+    }
+
+    public void registerUser(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                defConstant.URL_allFLAT,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
     @Override

@@ -1,7 +1,10 @@
 package com.example.yogendra.vivir.tenant;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -14,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yogendra.vivir.database.SharedPrefManager;
@@ -24,22 +28,33 @@ import com.example.yogendra.vivir.user.home;
 import com.example.yogendra.vivir.user.notification;
 import com.example.yogendra.vivir.user.signup;
 
+import static com.example.yogendra.vivir.database.SharedPrefManager.KEY_EMAIL;
+import static com.example.yogendra.vivir.database.SharedPrefManager.KEY_NAME;
+import static com.example.yogendra.vivir.database.SharedPrefManager.SHARED_PREF_NAME;
+
 public class user_dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+        private TextView userNameAtNav,userCity, userState,userContact,userEmail,userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //getPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         //USER LOGIN
-        if(!SharedPrefManager.getInstance(this).isLoggedin())
+       /* if(!SharedPrefManager.getInstance(this).isLoggedin())
         {
             finish();
-            startActivity(new Intent(this , home.class));
-        }
+            startActivity(new Intent(this , MainActivity.class));
+        }*/
+
+       // userNameAtNav = (TextView)findViewById(R.id.emailAtNav);
+      //  userEmail = findViewById(R.id.emailAtNav);
+
+        //userEmail.setText(SharedPrefManager.getInstance(this).getKeyEmail());
+        //userNameAtNav.setText(SharedPrefManager.getInstance(this).getKeyName());
 /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +136,8 @@ public class user_dashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_logout)
         {
+            SharedPrefManager.getInstance(this).logout();
+            finish();
             Intent in = new  Intent(user_dashboard.this , MainActivity.class);
             startActivity(in);
         }

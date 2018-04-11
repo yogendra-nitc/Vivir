@@ -153,14 +153,16 @@ public class home extends Fragment implements View.OnClickListener {
                                                 obj.getString("contact")
                                         );
                                 // REDIRECTION TO DASHBOARD
-                                if(obj.getString("userType")=="tenant")
+                                if(obj.getString("userType").equals("tenant"))
                                 {
                                     Intent in = new Intent(getActivity(), user_dashboard.class);
+                                    in.putExtra("userEmail",obj.getString("email"));
                                     startActivity(in);
                                 }
                                 else
                                 {
                                     Intent in = new Intent(getActivity(), OwnerDashboard.class);
+                                    in.putExtra("userEmail",obj.getString("email"));
                                     startActivity(in);
                                 }
 

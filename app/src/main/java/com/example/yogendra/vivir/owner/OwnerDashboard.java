@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.main.finder;
@@ -101,6 +102,8 @@ public class OwnerDashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_logout)
         {
+            SharedPrefManager.getInstance(this).logout();
+            finish();
             Intent in = new  Intent(OwnerDashboard.this , MainActivity.class);
             startActivity(in);
         }
