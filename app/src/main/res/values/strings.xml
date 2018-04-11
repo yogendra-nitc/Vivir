@@ -51,4 +51,7 @@
     <string name="title_activity_owner_dashboard">OwnerDashboard</string>
     <string name="text">text :</string>
     <string name="todo">TODO</string>
+    <string name="ProfilePicture">ProfilePicture</string>
+    <string name="name_icon">name_icon</string>
+    <string name="phone_icon">phone_icon</string>
 </resources>

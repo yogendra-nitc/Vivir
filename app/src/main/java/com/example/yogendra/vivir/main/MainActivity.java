@@ -21,13 +21,13 @@ public class MainActivity extends AppCompatActivity implements home.OnFragmentIn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //USER LOGIN
+       /* //USER LOGIN
         if(!SharedPrefManager.getInstance(this).isLoggedin())
         {
             finish();
             startActivity(new Intent(this , user_dashboard.class));
             return;
-        }
+        }*/
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));

@@ -23,12 +23,14 @@ import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
+import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.tenant.user_dashboard;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.PipedOutputStream;
+import java.security.acl.Owner;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -89,15 +91,17 @@ public class home extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+       // SharedPrefManager sinstance;
+       // sinstance = SharedPrefManager.getInstance(getActivity());
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_home, container, false);
         //USER LOGIN
-        if(!SharedPrefManager.getInstance(getActivity()).isLoggedin())
+      /*  if(sinstance.isLoggedin())
         {
             onDetach();
             startActivity(new Intent(getActivity() , user_dashboard.class));
-            onStop();
-        }
+            onDetach();
+        }*/
 
         editTextEmail = (EditText)view.findViewById(R.id.email);
         editTextPassword = (EditText)view.findViewById(R.id.password);
@@ -125,6 +129,7 @@ public class home extends Fragment implements View.OnClickListener {
     {
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
+        progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
@@ -142,12 +147,26 @@ public class home extends Fragment implements View.OnClickListener {
                                         .userLogin(
                                                 obj.getString("email"),
                                                 obj.getString("name"),
-                                                obj.getString("userType")
+                                                obj.getString("userType"),
+                                                obj.getString("city"),
+                                                obj.getString("state"),
+                                                obj.getString("contact")
                                         );
-                                Intent in = new Intent(getContext(), user_dashboard.class);
-                                startActivity(in);
-                                onDetach();
-                            }else{
+                                // REDIRECTION TO DASHBOARD
+                                if(obj.getString("userType")=="tenant")
+                                {
+                                    Intent in = new Intent(getActivity(), user_dashboard.class);
+                                    startActivity(in);
+                                }
+                                else
+                                {
+                                    Intent in = new Intent(getActivity(), OwnerDashboard.class);
+                                    startActivity(in);
+                                }
+
+                            }
+                            else
+                                {
                                 Toast.makeText(
                                         getContext(),
                                         obj.getString("message"),
