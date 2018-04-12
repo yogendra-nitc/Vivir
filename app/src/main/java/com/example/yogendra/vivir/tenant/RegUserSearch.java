@@ -1,4 +1,6 @@
 package com.example.yogendra.vivir.tenant;
+        import android.app.LauncherActivity;
+        import android.app.ProgressDialog;
         import android.graphics.Color;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ package com.example.yogendra.vivir.tenant;
         import com.example.yogendra.vivir.database.defConstant;
         import com.example.yogendra.vivir.network.RequestHandler;
 
+        import org.json.JSONArray;
         import org.json.JSONException;
         import org.json.JSONObject;
 
@@ -45,7 +48,7 @@ public class RegUserSearch extends AppCompatActivity {
         setContentView(R.layout.activity_reg_user_search);
         //Back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        /*
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home1));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home2));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home3));
@@ -56,24 +59,46 @@ public class RegUserSearch extends AppCompatActivity {
         flatList.add(new SearchItem("Basant Colony Flat-2, Indira Nagar, Lucknow", R.drawable.home8));
         flatList.add(new SearchItem("Kunj Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home9));
         flatList.add(new SearchItem("Dev Nivas Flat-2, Indira Nagar, Lucknow", R.drawable.home10));
-
-
+        */
         searchResult = findViewById(R.id.searchResult);
         searchResult.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         searchResult.setLayoutManager(linearLayoutManager);
-        adapter = new SearchActivityAdapter(flatList, RegUserSearch.this);
-        searchResult.setAdapter(adapter);
+        //adapter = new SearchActivityAdapter(flatList, RegUserSearch.this);
+        //searchResult.setAdapter(adapter);
+        getFlatData();
     }
 
-    public void registerUser(){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+    private void getFlatData(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("loading data...");
+        progressDialog.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 defConstant.URL_allFLAT,
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String s) {
+                        progressDialog.dismiss();
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObject = new JSONObject(s);
+                            JSONArray array = jsonObject.getJSONArray("response");
+
+                            for(int i=0; i<array.length(); i++)
+                            {
+                                JSONObject o = array.getJSONObject(i);
+                                SearchItem item = new SearchItem(
+                                        o.getString("aptId"),
+                                        o.getString("aptName"),
+                                        o.getString("locality"),
+                                        o.getString("city"),
+                                        o.getString("img1")
+                                );
+                                flatList.add(item);
+                            }
+
+                            adapter = new SearchActivityAdapter(flatList,getApplicationContext());
+                            searchResult.setAdapter(adapter);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

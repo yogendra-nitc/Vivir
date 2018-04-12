@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.tenant.SearchItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class SearchActivityAdapter  extends
     @Override    public void onBindViewHolder(Holderview holder, final int position) {
 
         holder.v_name.setText(flatList.get(position).getName());
-        holder.v_image.setImageResource(flatList.get(position).getPicture());
+        Picasso.with(context).load(flatList.get(position).getPicture()).into(holder.v_image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override            public void onClick(View view) {
