@@ -7,8 +7,12 @@ import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.network.RequestHandler;
+import com.example.yogendra.vivir.user.SliderUtils;
 
+import java.util.List;
 
 /**
  * Created by yogendra on 25/3/18.
@@ -18,15 +22,18 @@ public class ViewPagerAdapter extends PagerAdapter{
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private Integer[] images = {R.drawable.profile_img, R.drawable.profile_img, R.drawable.profile_img};
+    private List<SliderUtils> sliderImg;
+    private ImageLoader imageLoader;
+   // private Integer[] images = {R.drawable.profile_img, R.drawable.profile_img, R.drawable.profile_img};
 
-    public ViewPagerAdapter(Context context) {
+    public ViewPagerAdapter(List<SliderUtils>sliderImg, Context context) {
+        this.sliderImg = sliderImg;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return sliderImg.size();
     }
 
     @Override
@@ -38,8 +45,15 @@ public class ViewPagerAdapter extends PagerAdapter{
     public Object instantiateItem(ViewGroup container, int position) {
         layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.custom_layout, null);
+
+        SliderUtils utils = sliderImg.get(position);
+
         ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
-        imageView.setImageResource(images[position]);
+        //imageView.setImageResource(images[position]);
+
+        imageLoader = RequestHandler.getInstance(context).getImageLoader();
+        imageLoader.get(utils.getSliderImageUrl(),ImageLoader.getImageListener
+                (imageView, R.mipmap.ic_launcher, android.R.drawable.ic_dialog_alert));
 
         ViewPager vp = (ViewPager)container;
         vp.addView(view,0);

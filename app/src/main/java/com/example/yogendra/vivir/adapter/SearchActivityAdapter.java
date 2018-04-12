@@ -1,5 +1,6 @@
 package com.example.yogendra.vivir.adapter;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.tenant.SearchItem;
+import com.example.yogendra.vivir.user.flatDetails;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -42,9 +44,11 @@ public class SearchActivityAdapter  extends
         Picasso.with(context).load(flatList.get(position).getPicture()).into(holder.v_image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override            public void onClick(View view) {
-                Toast.makeText(context, "click on " + flatList.get(position).getName(),
-                        Toast.LENGTH_LONG).show();
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(context,flatDetails.class);
+                in.putExtra("flatId" , flatList.get(position).getId()); // send clicked flat id
+                context.startActivity(in);
             }
         });
     }

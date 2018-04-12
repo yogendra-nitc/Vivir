@@ -9,4 +9,5 @@ public class defConstant {
     public  static  final String URL_SIGNUP = ROOT_URL + "userSignup.php";
     public  static  final String URL_LOGIN = ROOT_URL + "userLogin.php";
     public  static  final String URL_allFLAT= ROOT_URL + "getAllFlat.php";
+    public  static  final String URL_FlatDetails= ROOT_URL + "flatDetails.php";
 }

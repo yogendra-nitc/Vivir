@@ -81,7 +81,7 @@ public class RegUserSearch extends AppCompatActivity {
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(s);
-                            JSONArray array = jsonObject.getJSONArray("response");
+                            JSONArray array = jsonObject.getJSONArray("AllFlat");
 
                             for(int i=0; i<array.length(); i++)
                             {
