@@ -47,7 +47,11 @@ public class SearchActivityAdapter  extends
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(context,flatDetails.class);
-                in.putExtra("flatId" , flatList.get(position).getId()); // send clicked flat id
+                in.putExtra("flatId" , flatList.get(position).getId());
+                in.putExtra("flatName" , flatList.get(position).getId());
+                in.putExtra("locality" , flatList.get(position).getId());
+                in.putExtra("flatId" , flatList.get(position).getId());
+                in.putExtra("flatId" , flatList.get(position).getId());// send clicked flat id
                 context.startActivity(in);
             }
         });
