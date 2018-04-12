@@ -53,6 +53,7 @@ public class SearchActivityAdapter  extends
         return flatList.size();
     }
 
+
     public void setfilter(List<SearchItem> listitem)
     {
         flatList=new ArrayList<>();
