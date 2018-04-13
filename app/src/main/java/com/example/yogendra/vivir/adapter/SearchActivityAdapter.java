@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.tenant.RegUserSearch;
 import com.example.yogendra.vivir.tenant.SearchItem;
 import com.example.yogendra.vivir.user.flatDetails;
 import com.squareup.picasso.Picasso;
@@ -48,11 +49,7 @@ public class SearchActivityAdapter  extends
             public void onClick(View view) {
                 Intent in = new Intent(context,flatDetails.class);
                 in.putExtra("flatId" , flatList.get(position).getId());
-                in.putExtra("flatName" , flatList.get(position).getId());
-                in.putExtra("locality" , flatList.get(position).getId());
-                in.putExtra("flatId" , flatList.get(position).getId());
-                in.putExtra("flatId" , flatList.get(position).getId());// send clicked flat id
-                context.startActivity(in);
+                view.getContext().startActivity(in);
             }
         });
     }

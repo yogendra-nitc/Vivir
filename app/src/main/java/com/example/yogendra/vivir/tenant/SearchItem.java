@@ -27,15 +27,6 @@ public class SearchItem {
     public String getId() {
         return id;
     }
-/*
-    public String getLocality() {
-        return locality;
-    }
-
-    public String getCity() {
-        return city;
-    }
-    */
 
     public String getPicture() {
         imageURL = "https://vivir18.000webhostapp.com/vivir/media/"+imageURL;
@@ -49,14 +40,6 @@ public class SearchItem {
     public void setId(String id) {
         this.id = id;
     }
-
-    /*public void setLocality(String locality) {
-        this.locality = locality;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }*/
 
     public void setPicture(String picture) {
         this.imageURL = picture;

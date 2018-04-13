@@ -48,7 +48,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:textColor="#000000"
-                        android:text="Flat:" />
+                        android:id="@+id/aptAdd"
+                         />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -66,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:textColor="#000000"
-                        android:text="Owner : " />
+                        android:id="@+id/aptOwner"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -86,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:textColor="#000000"
-                        android:text="Email : " />
+                        android:id="@+id/ownerEmail" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -105,7 +106,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:textColor="#000000"
-                        android:text="Contact : " />
+                        android:id="@+id/ownerContact" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,7 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:textColor="#000000"
-                        android:text="Rent Amount :" />
+                        android:id="@+id/aptRent" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -142,6 +143,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
+                        android:id="@+id/bookingRequest"
                         android:text="Book Now"/>
                     <Button
                         android:layout_width="wrap_content"
@@ -151,6 +153,7 @@
                         android:background="@color/colorPrimary"
                         android:textColor="#FFFFFF"
                         android:layout_margin="10dp"
+                        android:id="@+id/paymentRequest"
                         android:text="Make Payment"/>
                 </LinearLayout>
 

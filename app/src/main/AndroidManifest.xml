@@ -34,6 +34,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".user.flatDetails"
+            android:parentActivityName=".tenant.RegUserSearch"
             android:label="Flat Details"
             android:theme="@style/RestAppTheme" />
         <activity

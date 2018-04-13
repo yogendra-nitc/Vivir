@@ -1,84 +1,125 @@
 package com.example.yogendra.vivir.user;
 
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import com.android.volley.Request;
-        import com.android.volley.RequestQueue;
-        import com.android.volley.Response;
-        import com.android.volley.VolleyError;
-        import com.android.volley.toolbox.JsonArrayRequest;
-        import com.android.volley.toolbox.Volley;
-        import com.example.yogendra.vivir.R;
-        import com.example.yogendra.vivir.adapter.ViewPagerAdapter;
-        import com.example.yogendra.vivir.database.defConstant;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.adapter.ViewPagerAdapter;
+import com.example.yogendra.vivir.database.SharedPrefManager;
+import com.example.yogendra.vivir.database.defConstant;
+import com.example.yogendra.vivir.network.RequestHandler;
+import com.example.yogendra.vivir.owner.OwnerDashboard;
+import com.example.yogendra.vivir.tenant.user_dashboard;
 
-        import org.json.JSONArray;
-        import org.json.JSONException;
-        import org.json.JSONObject;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
-        import java.lang.reflect.Array;
-        import java.util.ArrayList;
-        import java.util.List;
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class flatDetails extends AppCompatActivity {
 
     ViewPager viewPager;
-    RequestQueue rq;
-    List<SliderUtils>sliderImg;
-    ViewPagerAdapter viewPagerAdapter;
-
-    String request_url = defConstant.URL_FlatDetails;
+    private ProgressDialog progressDialog;
+    private TextView aptAdd,AptOwner,ownerEmail,ownerContact,rentAmt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flat_details);
 
-        rq = Volley.newRequestQueue(this);
-        sliderImg = new ArrayList<>();
+        //Back button
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
-        sendRequest();
 
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Processing...");
+        myApartment();
+        aptAdd = (TextView)findViewById(R.id.aptAdd);
+        AptOwner = (TextView)findViewById(R.id.aptOwner);
+        ownerEmail = (TextView)findViewById(R.id.ownerEmail);
+        ownerContact = (TextView)findViewById(R.id.ownerContact);
+        rentAmt = (TextView)findViewById(R.id.aptRent);
     }
 
-    public void sendRequest()
+    // Apartment Details Display
+    private void myApartment()
     {
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(JsonArrayRequest.Method.GET, request_url, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
+        Intent in = getIntent();
+        final String aptId = in.getStringExtra("flatId");  ;
+        progressDialog.show();
 
-                for(int i=0; i< response.length();i++)
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                defConstant.URL_myApartment,
+                new Response.Listener<String>()
                 {
-                    SliderUtils sliderUtils = new SliderUtils();
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        progressDialog.dismiss();
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            if(!obj.getBoolean("error")){
+                                aptAdd.setText(obj.getString("aptAdd"));
+                                AptOwner.setText(obj.getString("ownerName"));
+                                ownerEmail.setText(obj.getString("email"));
+                                ownerContact.setText(obj.getString("contact"));
+                                rentAmt.setText(obj.getString("rentAmt"));
 
-                    try {
-                        JSONObject jsonObject = response.getJSONObject(i);
+                            }
+                            else
+                            {
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        obj.getString("message"),
+                                        Toast.LENGTH_LONG
+                                ).show();
+                            }
 
-                        sliderUtils.setSliderImageUrl(jsonObject.getString("imageUrl"));
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
 
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
                     }
-
-                    sliderImg.add(sliderUtils);
-
-                }
-
-                viewPagerAdapter = new ViewPagerAdapter(sliderImg,flatDetails.this);
-                viewPager.setAdapter(viewPagerAdapter);
-
-            }
-        }, new Response.ErrorListener() {
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        progressDialog.dismiss();
+                        Toast.makeText(
+                                getApplicationContext(),
+                                error.getMessage(),
+                                Toast.LENGTH_LONG
+                        ).show();
+                    }
+                }){
             @Override
-            public void onErrorResponse(VolleyError error) {
-
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
+                Map <String, String> params = new HashMap<>();
+                params.put("aptId",aptId);
+                return params;
             }
-        });
-        rq.add(jsonArrayRequest);
+
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 }
