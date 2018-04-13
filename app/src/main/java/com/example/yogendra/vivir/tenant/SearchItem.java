@@ -9,18 +9,23 @@ public class SearchItem {
     private String id;
     private String locality;
     private String city;
+    private String rentAmt;
+    private String aptType;
     private String imageURL;
 
-    public SearchItem(String id,String name, String locality, String city, String imageURL) {
+    public SearchItem(String id,String name, String locality, String city,
+                      String rentAmt, String aptType, String imageURL) {
         this.id = id;
         this.name = name;
         this.locality = locality;
         this.city = city;
+        this.rentAmt = rentAmt;
+        this.aptType = aptType;
         this.imageURL = imageURL;
     }
 
     public String getName() {
-        name = name +", " + locality+", "+city;
+        name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
         return name;
     }
 

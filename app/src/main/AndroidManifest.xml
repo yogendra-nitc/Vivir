@@ -25,8 +25,8 @@
         </activity>
         <activity
             android:name=".user.signup"
-            android:parentActivityName=".main.MainActivity"
             android:label="@string/title_activity_signup"
+            android:parentActivityName=".main.MainActivity"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.user_dashboard"
@@ -34,8 +34,8 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".user.flatDetails"
-            android:parentActivityName=".tenant.RegUserSearch"
             android:label="Flat Details"
+            android:parentActivityName=".tenant.RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.RegUserSearch"
@@ -55,8 +55,8 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.requestDetails"
-            android:parentActivityName=".user.requestList"
             android:label="Approve Request"
+            android:parentActivityName=".user.requestList"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.notification"
@@ -72,8 +72,8 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.uploadRentDetails"
-            android:parentActivityName=".tenant.user_dashboard"
             android:label="Upload Rent Details"
+            android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.deleteFlatRecord"
@@ -90,12 +90,13 @@
         <activity
             android:name=".user.changePassword"
             android:label="Change Password"
-            android:theme="@style/RestAppTheme"
-            android:parentActivityName=".tenant.user_dashboard"/>
+            android:parentActivityName=".tenant.user_dashboard"
+            android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.OwnerDashboard"
             android:label="My Profile"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".owner.MyFlats"></activity>
     </application>
 
 </manifest>

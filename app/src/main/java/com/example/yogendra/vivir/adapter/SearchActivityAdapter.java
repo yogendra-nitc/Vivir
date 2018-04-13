@@ -39,7 +39,8 @@ public class SearchActivityAdapter  extends
         return new Holderview(layout);
     }
 
-    @Override    public void onBindViewHolder(Holderview holder, final int position) {
+    @Override
+    public void onBindViewHolder(Holderview holder, final int position) {
 
         holder.v_name.setText(flatList.get(position).getName());
         Picasso.with(context).load(flatList.get(position).getPicture()).into(holder.v_image);

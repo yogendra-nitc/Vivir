@@ -79,6 +79,8 @@ public class RegUserSearch extends AppCompatActivity {
                                         o.getString("aptName"),
                                         o.getString("locality"),
                                         o.getString("city"),
+                                        o.getString("rentAmt"),
+                                        o.getString("aptType"),
                                         o.getString("img1")
                                 );
                                 flatList.add(item);

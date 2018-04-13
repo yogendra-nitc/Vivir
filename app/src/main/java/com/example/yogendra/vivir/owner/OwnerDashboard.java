@@ -88,6 +88,7 @@ public class OwnerDashboard extends AppCompatActivity
         if (id == R.id.nav_my_flats)
         {
             Intent in = new  Intent(OwnerDashboard.this , MyFlats.class);
+            in.putExtra("ownerId" , "ojackv");
             startActivity(in);
         }
         else if (id == R.id.nav_NA)
