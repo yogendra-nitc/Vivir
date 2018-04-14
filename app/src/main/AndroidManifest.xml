@@ -96,7 +96,6 @@
             android:name=".owner.OwnerDashboard"
             android:label="My Profile"
             android:theme="@style/AppTheme" />
-        <activity android:name=".owner.MyFlats"></activity>
     </application>
 
 </manifest>

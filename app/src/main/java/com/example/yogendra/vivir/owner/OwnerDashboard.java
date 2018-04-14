@@ -18,6 +18,7 @@ import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.main.finder;
+import com.example.yogendra.vivir.tenant.RegUserSearch;
 import com.example.yogendra.vivir.user.requestList;
 import com.example.yogendra.vivir.user.complainList;
 import com.example.yogendra.vivir.user.notification;
@@ -87,7 +88,8 @@ public class OwnerDashboard extends AppCompatActivity
 
         if (id == R.id.nav_my_flats)
         {
-            Intent in = new  Intent(OwnerDashboard.this , MyFlats.class);
+            Intent in = new  Intent(OwnerDashboard.this , RegUserSearch.class);
+            in.putExtra("active" , "MyFlats");
             in.putExtra("ownerId" , "ojackv");
             startActivity(in);
         }

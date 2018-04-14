@@ -122,6 +122,7 @@ public class user_dashboard extends AppCompatActivity
         if (id == R.id.nav_search)
         {
             Intent in = new  Intent(user_dashboard.this , RegUserSearch.class);
+            in.putExtra("active" , "RegUserSearch");
             startActivity(in);
         }
         else if (id == R.id.nav_notification)
