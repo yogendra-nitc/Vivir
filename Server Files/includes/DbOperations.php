@@ -82,6 +82,28 @@ include('Database.php');
             $data[] = $row; 
             return $data;
         }
-    }
+
+ //******** CHNAGE PASSWORD *********
+	    public function changePassword($email, $oldPwd, $newPwd)
+	    {
+	    	$sql = "SELECT * FROM user where email = '$email' and password = '$oldPwd'";
+	    	$result = $this->connect()->query($sql);
+	    	$num = $result->num_rows;
+	    	if($num>0)
+	    	{
+	    		$sql = "UPDATE user SET password ='$newPwd' WHERE email = '$email'";
+	    		$result = $this->connect()->query($sql);
+	    		if($result)
+	    			return true;
+	    		else
+	    			return false;
+	    	}
+	    	else
+	    	{
+	    		return false;
+	    	}
+	    	
+	    }
+	}
 
 ?>
