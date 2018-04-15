@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +22,7 @@ import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
 import com.example.yogendra.vivir.owner.OwnerDashboard;
+import com.example.yogendra.vivir.owner.updateFlatRecord;
 import com.example.yogendra.vivir.tenant.user_dashboard;
 
 import org.json.JSONException;
@@ -43,6 +46,22 @@ public class flatDetails extends AppCompatActivity {
         setContentView(R.layout.activity_flat_details);
         //Back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //Hiding the owner specific buttons
+    /*    if(sharedPrefManager_obj.getKeyUtype().equals("tenant"))
+        {
+            LinearLayout del_layout=(LinearLayout)this.findViewById(R.id.deletApt);
+            del_layout.setVisibility(LinearLayout.GONE);
+
+            View edit_btn = findViewById(R.id.editApt);
+            edit_btn.setVisibility(View.GONE);
+        //}
+         else
+        {*/
+            LinearLayout request_layout=(LinearLayout)this.findViewById(R.id.requestLayout);
+            request_layout.setVisibility(LinearLayout.GONE);
+
+        //}
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
 
@@ -138,5 +157,22 @@ public class flatDetails extends AppCompatActivity {
                 paymentRequest.setVisibility(View.VISIBLE);
             }
         });*/
+    }
+
+    // METHOD FOR REDIRECTING TO EDIT fLAT DETAILS ACTIVITY
+    public void editApt(View v)
+    {
+        Intent in = new Intent(flatDetails.this, updateFlatRecord.class);
+       // Intent intent = getIntent();
+        //in.putExtra("aptId",intent.getStringExtra("flatId"));
+        in.putExtra("aptId","APT101V");
+        startActivity(in);
+    }
+
+    //METHOD FOR DELETING FLAT RECORD
+    public void deleteApt(View v)
+    {
+        // create a dialouge box for deletion and redirect to RegUserSearch
+
     }
 }
