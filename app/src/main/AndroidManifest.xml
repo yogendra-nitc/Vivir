@@ -42,7 +42,7 @@
             android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".owner.uploadFlatDetails"
+            android:name=".owner.AddFlat"
             android:label="Upload Flat Details"
             android:theme="@style/RestAppTheme" />
         <activity

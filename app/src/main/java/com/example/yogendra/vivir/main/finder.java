@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.owner.AddFlat;
 import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.owner.uploadFlatImage;
 import com.example.yogendra.vivir.tenant.RegUserSearch;
@@ -216,7 +217,7 @@ public class finder extends Fragment {
         uploadFlatDetails.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.owner.uploadFlatDetails.class);
+                Intent in = new  Intent(getActivity() , AddFlat.class);
                 startActivity(in);
             }
         });

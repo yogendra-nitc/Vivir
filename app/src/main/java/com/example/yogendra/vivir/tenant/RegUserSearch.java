@@ -24,8 +24,10 @@ package com.example.yogendra.vivir.tenant;
         import com.android.volley.toolbox.StringRequest;
         import com.example.yogendra.vivir.R;
         import com.example.yogendra.vivir.adapter.SearchActivityAdapter;
+        import com.example.yogendra.vivir.database.SharedPrefManager;
         import com.example.yogendra.vivir.database.defConstant;
         import com.example.yogendra.vivir.network.RequestHandler;
+        import com.example.yogendra.vivir.owner.AddFlat;
 
         import org.json.JSONArray;
         import org.json.JSONException;
@@ -37,6 +39,7 @@ package com.example.yogendra.vivir.tenant;
         import java.util.Map;
 
 public class RegUserSearch extends AppCompatActivity {
+    SharedPrefManager sharedPrefManager_obj;
     SearchView searchView;
     RecyclerView searchResult;
     List<SearchItem> flatList = new ArrayList<>();
@@ -47,10 +50,13 @@ public class RegUserSearch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent in = getIntent();
-        String activeActivity = in.getStringExtra("active");
+        sharedPrefManager_obj = SharedPrefManager.getInstance(this);
+        String active = sharedPrefManager_obj.getKeyUtype();
 
-        if(activeActivity.equals("MyFlats"))
+        //Intent in = getIntent();
+        //String activeActivity = in.getStringExtra("active");
+
+        if(active.equals("owner"))
             setContentView(R.layout.my_flats);
         else
             setContentView(R.layout.activity_reg_user_search);
@@ -60,7 +66,7 @@ public class RegUserSearch extends AppCompatActivity {
             searchResult.setHasFixedSize(true);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
             searchResult.setLayoutManager(linearLayoutManager);
-        if(activeActivity.equals("MyFlats"))
+        if(active.equals("owner"))
             getMyFlats();
         else
             getFlatData();
@@ -120,8 +126,9 @@ public class RegUserSearch extends AppCompatActivity {
     private void getMyFlats(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("loading data...");
-        Intent in = getIntent();
-        final String ownerId = in.getStringExtra("ownerId");
+
+        //sharedPrefManager_obj = SharedPrefManager.getInstance(this);
+        final String ownerId = "vjacko";
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 defConstant.URL_myApartment,
@@ -234,4 +241,10 @@ public class RegUserSearch extends AppCompatActivity {
         }
     }
 }
+    // Method for adding apartment
+    public void addApartment(View v)
+    {
+        Intent in = new Intent(RegUserSearch.this, AddFlat.class);
+        startActivity(in);
+    }
 }

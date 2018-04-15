@@ -16,6 +16,7 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addApartment"
+        android:onClick="addApartment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

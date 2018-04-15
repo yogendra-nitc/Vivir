@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.yogendra.vivir.R;
 
-public class uploadFlatDetails extends AppCompatActivity {
+public class AddFlat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

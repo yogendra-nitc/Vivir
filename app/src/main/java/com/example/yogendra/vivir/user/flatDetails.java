@@ -35,12 +35,12 @@ public class flatDetails extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private TextView aptAdd,AptOwner,ownerEmail,ownerContact,rentAmt;
     private Button bookingRequest,paymentRequest;
+    SharedPrefManager sharedPrefManager_obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flat_details);
-
         //Back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

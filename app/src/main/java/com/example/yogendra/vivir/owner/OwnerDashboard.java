@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
@@ -64,6 +65,12 @@ public class OwnerDashboard extends AppCompatActivity
         startActivity(in);
     }
 
+    //Change Password
+        public void changePassword(View v)
+        {
+            Intent in = new  Intent(OwnerDashboard.this , com.example.yogendra.vivir.user.changePassword.class);
+            startActivity(in);
+        }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -89,8 +96,6 @@ public class OwnerDashboard extends AppCompatActivity
         if (id == R.id.nav_my_flats)
         {
             Intent in = new  Intent(OwnerDashboard.this , RegUserSearch.class);
-            in.putExtra("active" , "MyFlats");
-            in.putExtra("ownerId" , "ojackv");
             startActivity(in);
         }
         else if (id == R.id.nav_NA)

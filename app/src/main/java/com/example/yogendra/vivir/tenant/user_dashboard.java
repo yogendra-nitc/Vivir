@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -24,17 +21,11 @@ import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.user.complainList;
-import com.example.yogendra.vivir.user.home;
 import com.example.yogendra.vivir.user.notification;
-import com.example.yogendra.vivir.user.signup;
-
-import static com.example.yogendra.vivir.database.SharedPrefManager.KEY_EMAIL;
-import static com.example.yogendra.vivir.database.SharedPrefManager.KEY_NAME;
-import static com.example.yogendra.vivir.database.SharedPrefManager.SHARED_PREF_NAME;
 
 public class user_dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-        private TextView userNameAtNav,userCity, userState,userContact,userEmail,userName;
+        private TextView userNameAtNav,userAdd,userEmail,userName,emailAtNav,userContact,active_since;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +41,21 @@ public class user_dashboard extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //userNameAtNav = findViewById(R.id.userNameAtNav);
+        //emailAtNav    = findViewById(R.id.emailAtNav);
+       // userName      = findViewById(R.id.name);
+        //userAdd       = findViewById(R.id.address);
+       // userEmail     = findViewById(R.id.email);
+        //userContact   = findViewById(R.id.contact);
+      // active_since  = findViewById(R.id.active_since);
+
+        //userNameAtNav.setText(SharedPrefManager_obj.getKeyName());
+       // emailAtNav.setText(SharedPrefManager_obj.getKeyEmail());
+       /* userEmail.setText(SharedPrefManager_obj.getKeyEmail());
+        userName.setText(SharedPrefManager_obj.getKeyName());
+        userContact.setText(SharedPrefManager_obj.getKeyContact());
+        userAdd.setText(SharedPrefManager_obj.getKeyCity()+" , "+SharedPrefManager_obj.getKeyState());*/
     }
 
     @Override
@@ -72,6 +78,13 @@ public class user_dashboard extends AppCompatActivity
     // Edit Profile
     public void EditProfile(View v){
         Intent in = new  Intent(user_dashboard.this , com.example.yogendra.vivir.user.setProfile.class);
+        startActivity(in);
+    }
+
+    //Change Password
+    public void changePassword(View v)
+    {
+        Intent in = new  Intent(user_dashboard.this , com.example.yogendra.vivir.user.changePassword.class);
         startActivity(in);
     }
 
@@ -99,7 +112,6 @@ public class user_dashboard extends AppCompatActivity
         if (id == R.id.nav_search)
         {
             Intent in = new  Intent(user_dashboard.this , RegUserSearch.class);
-            in.putExtra("active" , "RegUserSearch");
             startActivity(in);
         }
         else if (id == R.id.nav_notification)
