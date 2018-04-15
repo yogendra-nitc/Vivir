@@ -34,6 +34,8 @@ import java.security.acl.Owner;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.yogendra.vivir.database.SharedPrefManager.KEY_EMAIL;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -91,17 +93,7 @@ public class home extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       // SharedPrefManager sinstance;
-       // sinstance = SharedPrefManager.getInstance(getActivity());
-        // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_home, container, false);
-        //USER LOGIN
-      /*  if(sinstance.isLoggedin())
-        {
-            onDetach();
-            startActivity(new Intent(getActivity() , user_dashboard.class));
-            onDetach();
-        }*/
 
         editTextEmail = (EditText)view.findViewById(R.id.email);
         editTextPassword = (EditText)view.findViewById(R.id.password);
@@ -152,17 +144,19 @@ public class home extends Fragment implements View.OnClickListener {
                                                 obj.getString("state"),
                                                 obj.getString("contact")
                                         );
+                                SharedPrefManager SharedPref_obj;
+                                SharedPref_obj = SharedPrefManager.getInstance(getContext());
                                 // REDIRECTION TO DASHBOARD
-                                if(obj.getString("userType").equals("tenant"))
+                                if(SharedPref_obj.getKeyUtype().equals("tenant"))
                                 {
                                     Intent in = new Intent(getActivity(), user_dashboard.class);
-                                    in.putExtra("userEmail",obj.getString("email"));
+                                    in.putExtra("userEmail",SharedPref_obj.getKeyEmail());
                                     startActivity(in);
                                 }
                                 else
                                 {
                                     Intent in = new Intent(getActivity(), OwnerDashboard.class);
-                                    in.putExtra("userEmail",obj.getString("email"));
+                                    in.putExtra("userEmail",SharedPref_obj.getKeyEmail());
                                     startActivity(in);
                                 }
 

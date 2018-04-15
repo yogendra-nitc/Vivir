@@ -19,7 +19,7 @@ public class SharedPrefManager
     public static final String KEY_STATE = "state";
     public static final String KEY_CONTACT = "contact";
 
-    private SharedPrefManager(Context context)
+    public SharedPrefManager(Context context)
     {
         mCtx = context;
     }

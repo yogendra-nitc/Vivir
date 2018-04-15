@@ -10,24 +10,35 @@ import android.os.Bundle;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.adapter.PagerAdapter;
 import com.example.yogendra.vivir.database.SharedPrefManager;
+import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.tenant.user_dashboard;
 import com.example.yogendra.vivir.user.home;
 
 public class MainActivity extends AppCompatActivity implements home.OnFragmentInteractionListener,
         search.OnFragmentInteractionListener,finder.OnFragmentInteractionListener {
-
+    SharedPrefManager SharedPrefManager_obj = SharedPrefManager.getInstance(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* //USER LOGIN
-        if(!SharedPrefManager.getInstance(this).isLoggedin())
+       //USER LOGIN STATUS CHECKING
+        if(SharedPrefManager_obj.isLoggedin())
         {
-            finish();
-            startActivity(new Intent(this , user_dashboard.class));
-            return;
-        }*/
+            if((SharedPrefManager_obj.getKeyUtype()).equals("tenant"))
+            {
+                finish();
+                startActivity(new Intent(this , user_dashboard.class));
+                return;
+            }
+            else
+            {
+                finish();
+                startActivity(new Intent(this , OwnerDashboard.class));
+                return;
+            }
+
+        }
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));

@@ -1,6 +1,7 @@
 package com.example.yogendra.vivir.tenant;
         import android.app.LauncherActivity;
         import android.app.ProgressDialog;
+        import android.content.Intent;
         import android.graphics.Color;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
@@ -45,17 +46,27 @@ public class RegUserSearch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reg_user_search);
-        //Back button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        searchResult = findViewById(R.id.searchResult);
-        searchResult.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        searchResult.setLayoutManager(linearLayoutManager);
-        //adapter = new SearchActivityAdapter(flatList, RegUserSearch.this);
-        //searchResult.setAdapter(adapter);
-        getFlatData();
+
+        Intent in = getIntent();
+        String activeActivity = in.getStringExtra("active");
+
+        if(activeActivity.equals("MyFlats"))
+            setContentView(R.layout.my_flats);
+        else
+            setContentView(R.layout.activity_reg_user_search);
+            //Back button
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            searchResult = findViewById(R.id.searchResult);
+            searchResult.setHasFixedSize(true);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+            searchResult.setLayoutManager(linearLayoutManager);
+        if(activeActivity.equals("MyFlats"))
+            getMyFlats();
+        else
+            getFlatData();
     }
+
+// METHOD FOR GETTING ALL APARTMENTS LIST
 
     private void getFlatData(){
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -100,6 +111,64 @@ public class RegUserSearch extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 }){
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+// METHOD FOR GETTING ALL APARTMENT FOR A SPECIFIC - OWNER
+
+    private void getMyFlats(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("loading data...");
+        Intent in = getIntent();
+        final String ownerId = in.getStringExtra("ownerId");
+        progressDialog.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                defConstant.URL_myApartment,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        progressDialog.dismiss();
+                        try {
+                            JSONObject jsonObject = new JSONObject(s);
+                            JSONArray array = jsonObject.getJSONArray("MyFlats");
+
+                            for(int i=0; i<array.length(); i++)
+                            {
+                                JSONObject o = array.getJSONObject(i);
+                                SearchItem item = new SearchItem(
+                                        o.getString("aptId"),
+                                        o.getString("aptName"),
+                                        o.getString("locality"),
+                                        o.getString("city"),
+                                        o.getString("rentAmt"),
+                                        o.getString("aptType"),
+                                        o.getString("img1")
+                                );
+                                flatList.add(item);
+                            }
+
+                            adapter = new SearchActivityAdapter(flatList,getApplicationContext());
+                            searchResult.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError
+            {
+                Map <String,String> params = new HashMap<>();
+                params.put("ownerId",ownerId);
+                return params;
+            }
         };
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
