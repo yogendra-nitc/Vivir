@@ -41,30 +41,7 @@ public class user_dashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        //USER LOGIN
-       /* if(!SharedPrefManager.getInstance(this).isLoggedin())
-        {
-            finish();
-            startActivity(new Intent(this , MainActivity.class));
-        }*/
-
-       // userNameAtNav = (TextView)findViewById(R.id.emailAtNav);
-      //  userEmail = findViewById(R.id.emailAtNav);
-
-        //userEmail.setText(SharedPrefManager.getInstance(this).getKeyEmail());
-        //userNameAtNav.setText(SharedPrefManager.getInstance(this).getKeyName());
-/*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
