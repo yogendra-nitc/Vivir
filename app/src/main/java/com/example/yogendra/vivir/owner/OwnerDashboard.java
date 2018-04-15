@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
@@ -26,6 +27,9 @@ import com.example.yogendra.vivir.user.notification;
 
 public class OwnerDashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+        private TextView userNameAtNav,userAdd,userEmail,userName,emailAtNav,userContact,active_since;
+        SharedPrefManager sharedPrefManager_obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,25 @@ public class OwnerDashboard extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        sharedPrefManager_obj = SharedPrefManager.getInstance(getApplicationContext());
+
+        View header=navigationView.getHeaderView(0);
+        userNameAtNav = header.findViewById(R.id.userNameAtNav);
+        emailAtNav    = header.findViewById(R.id.emailAtNav);
+        userName      = findViewById(R.id.name);
+        userAdd       = findViewById(R.id.address);
+        userEmail     = findViewById(R.id.email);
+        userContact   = findViewById(R.id.contact);
+        active_since  = findViewById(R.id.active_since);
+
+        userNameAtNav.setText(sharedPrefManager_obj.getKeyName());
+        emailAtNav.setText(sharedPrefManager_obj.getKeyEmail());
+        userEmail.setText(sharedPrefManager_obj.getKeyEmail());
+        userName.setText(sharedPrefManager_obj.getKeyName());
+        userContact.setText(sharedPrefManager_obj.getKeyContact());
+        userAdd.setText(sharedPrefManager_obj.getKeyCity()+" , "+sharedPrefManager_obj.getKeyState());
+
     }
     @Override
     public void onBackPressed() {

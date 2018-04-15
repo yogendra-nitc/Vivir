@@ -26,13 +26,13 @@ import com.example.yogendra.vivir.user.notification;
 public class user_dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private TextView userNameAtNav,userAdd,userEmail,userName,emailAtNav,userContact,active_since;
-    @Override
+        SharedPrefManager sharedPrefManager_obj;
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -41,21 +41,23 @@ public class user_dashboard extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        sharedPrefManager_obj = SharedPrefManager.getInstance(getApplicationContext());
 
-        //userNameAtNav = findViewById(R.id.userNameAtNav);
-        //emailAtNav    = findViewById(R.id.emailAtNav);
-       // userName      = findViewById(R.id.name);
-        //userAdd       = findViewById(R.id.address);
-       // userEmail     = findViewById(R.id.email);
-        //userContact   = findViewById(R.id.contact);
-      // active_since  = findViewById(R.id.active_since);
+        View header=navigationView.getHeaderView(0);
+        userNameAtNav = header.findViewById(R.id.userNameAtNav);
+        emailAtNav    = header.findViewById(R.id.emailAtNav);
+        userName      = findViewById(R.id.name);
+        userAdd       = findViewById(R.id.address);
+        userEmail     = findViewById(R.id.email);
+        userContact   = findViewById(R.id.contact);
+        active_since  = findViewById(R.id.active_since);
 
-        //userNameAtNav.setText(SharedPrefManager_obj.getKeyName());
-       // emailAtNav.setText(SharedPrefManager_obj.getKeyEmail());
-       /* userEmail.setText(SharedPrefManager_obj.getKeyEmail());
-        userName.setText(SharedPrefManager_obj.getKeyName());
-        userContact.setText(SharedPrefManager_obj.getKeyContact());
-        userAdd.setText(SharedPrefManager_obj.getKeyCity()+" , "+SharedPrefManager_obj.getKeyState());*/
+        userNameAtNav.setText(sharedPrefManager_obj.getKeyName());
+        emailAtNav.setText(sharedPrefManager_obj.getKeyEmail());
+        userEmail.setText(sharedPrefManager_obj.getKeyEmail());
+        userName.setText(sharedPrefManager_obj.getKeyName());
+        userContact.setText(sharedPrefManager_obj.getKeyContact());
+        userAdd.setText(sharedPrefManager_obj.getKeyCity()+" , "+sharedPrefManager_obj.getKeyState());
     }
 
     @Override

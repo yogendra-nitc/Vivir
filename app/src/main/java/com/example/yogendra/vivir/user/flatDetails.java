@@ -46,22 +46,19 @@ public class flatDetails extends AppCompatActivity {
         setContentView(R.layout.activity_flat_details);
         //Back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        sharedPrefManager_obj = SharedPrefManager.getInstance(getApplicationContext());
         //Hiding the owner specific buttons
-    /*    if(sharedPrefManager_obj.getKeyUtype().equals("tenant"))
+       if(sharedPrefManager_obj.getKeyUtype().equals("tenant"))
         {
-            LinearLayout del_layout=(LinearLayout)this.findViewById(R.id.deletApt);
-            del_layout.setVisibility(LinearLayout.GONE);
-
-            View edit_btn = findViewById(R.id.editApt);
-            edit_btn.setVisibility(View.GONE);
-        //}
+            LinearLayout delete_layout=(LinearLayout)this.findViewById(R.id.deleteLayout);
+            delete_layout.setVisibility(LinearLayout.GONE);
+        }
          else
-        {*/
+        {
             LinearLayout request_layout=(LinearLayout)this.findViewById(R.id.requestLayout);
             request_layout.setVisibility(LinearLayout.GONE);
 
-        //}
+        }
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
 
@@ -81,8 +78,8 @@ public class flatDetails extends AppCompatActivity {
     // Apartment Details Display
     private void myApartment()
     {
-        Intent in = getIntent();
-        final String aptId = in.getStringExtra("flatId");
+        //Intent in = getIntent();
+        final String aptId = "APT101V";
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(
