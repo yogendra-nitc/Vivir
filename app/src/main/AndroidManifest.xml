@@ -3,6 +3,7 @@
     package="com.example.yogendra.vivir">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -43,7 +44,7 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.AddFlat"
-            android:label="Upload Flat Details"
+            android:label="Add apartment"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.uploadFlatImage"

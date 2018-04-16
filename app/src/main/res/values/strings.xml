@@ -54,4 +54,10 @@
     <string name="ProfilePicture">ProfilePicture</string>
     <string name="name_icon">name_icon</string>
     <string name="phone_icon">phone_icon</string>
+    <string name="submit_details">Submit Details</string>
+    <string name="apartment_name">Apartment Name :</string>
+    <string name="rent_month">Rent/month :</string>
+    <string name="type">Type :</string>
+    <string name="city">City :</string>
+    <string name="locality">Locality :</string>
 </resources>
