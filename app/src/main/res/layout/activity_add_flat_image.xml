@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="5"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/select_images"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FBFCFC"
+                android:layout_marginBottom="10dp"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_1"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#FBFCFC"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_attachment_black_24dp"  android:layout_marginStart="5dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_name"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:layout_weight="1" android:layout_marginStart="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:background="#FBFCFC"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_2"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:inputType=""
+                    android:background="#FBFCFC"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_attachment_black_24dp" android:layout_marginStart="5dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_name"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:layout_weight="1" android:layout_marginStart="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FBFCFC"
+                android:layout_marginBottom="10dp"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_3"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:inputType=""
+                    android:background="#FBFCFC"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_attachment_black_24dp" android:layout_marginStart="5dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/image_name"
+                    android:textStyle="bold"
+                    android:gravity="right"
+                    android:layout_weight="1"  />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_btn"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:id="@+id/addApt"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimary"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        </ScrollView>
+
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

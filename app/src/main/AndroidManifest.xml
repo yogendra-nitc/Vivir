@@ -45,10 +45,12 @@
         <activity
             android:name=".owner.AddFlat"
             android:label="Add apartment"
+            android:parentActivityName=".tenant.RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".owner.uploadFlatImage"
-            android:label="Upload Flat image"
+            android:name=".owner.AddImage"
+            android:label="Add image"
+            android:parentActivityName=".tenant.RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.requestList"

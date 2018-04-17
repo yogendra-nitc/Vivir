@@ -14,7 +14,7 @@
             android:weightSum="5"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -24,7 +24,6 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:text="@string/apartment_name"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
@@ -32,6 +31,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
+                android:id="@+id/aptName"
                 android:inputType="" />
             </LinearLayout>
             <LinearLayout
@@ -42,7 +42,6 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:text="@string/locality"
                     android:textStyle="bold"
                     android:layout_weight="1.5"/>
@@ -50,6 +49,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
+                    android:id="@+id/aptLocality"
                     android:inputType="" />
             </LinearLayout>
             <LinearLayout
@@ -60,7 +60,6 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:text="@string/city"
                     android:textStyle="bold"
                     android:layout_weight="1.5"/>
@@ -68,6 +67,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
+                    android:id="@+id/aptCity"
                     android:inputType="" />
             </LinearLayout>
             <LinearLayout
@@ -78,7 +78,6 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:text="@string/type"
                     android:textStyle="bold"
                     android:layout_weight="1.5"/>
@@ -86,6 +85,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
+                    android:id="@+id/aptType"
                     android:inputType="" />
             </LinearLayout>
             <LinearLayout
@@ -96,7 +96,6 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:text="@string/rent_month"
                     android:textStyle="bold"
                     android:layout_weight="1.5"/>
@@ -104,6 +103,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2.5"
+                    android:id="@+id/rentAmt"
                     android:inputType="" />
             </LinearLayout>
             <Button
@@ -112,6 +112,7 @@
                 android:text="Continue"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
+                android:id="@+id/addApt"
                 android:textColor="#FFFFFF"
                 android:background="@color/colorPrimary"
                 android:layout_gravity="center"/>

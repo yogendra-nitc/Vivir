@@ -5,11 +5,12 @@ import android.os.Bundle;
 
 import com.example.yogendra.vivir.R;
 
-public class uploadFlatImage extends AppCompatActivity {
+public class AddImage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload_flat_image);
+        setContentView(R.layout.activity_add_flat_image);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
