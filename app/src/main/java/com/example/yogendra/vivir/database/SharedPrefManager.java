@@ -18,6 +18,8 @@ public class SharedPrefManager
     public static final String KEY_CITY = "city";
     public static final String KEY_STATE = "state";
     public static final String KEY_CONTACT = "contact";
+    public static final String KEY_REG_DATE = "regDate";
+    public static final String KEY_URL = "url";
 
     public SharedPrefManager(Context context)
     {
@@ -33,7 +35,8 @@ public class SharedPrefManager
         return mInstance;
     }
 
-    public boolean userLogin(String email, String name, String userType, String city, String state, String contact)
+    public boolean userLogin(String email, String name, String userType, String city,
+                             String state, String contact,String regDate, String url)
     {
         SharedPreferences sharedPreferences;
         sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME , Context.MODE_PRIVATE);
@@ -44,6 +47,8 @@ public class SharedPrefManager
         editor.putString(KEY_CITY,city);
         editor.putString(KEY_STATE,state);
         editor.putString(KEY_CONTACT,contact);
+        editor.putString(KEY_REG_DATE,regDate);
+        editor.putString(KEY_URL,url);
         editor.apply();
         return true;
     }
@@ -97,5 +102,15 @@ public class SharedPrefManager
     {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_CONTACT,null);
+    }
+    public String getRegDate()
+    {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_REG_DATE,null);
+    }
+    public String getKeyUrl()
+    {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_URL,null);
     }
 }

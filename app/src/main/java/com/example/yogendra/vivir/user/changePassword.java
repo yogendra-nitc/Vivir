@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
 
@@ -30,12 +31,14 @@ public class changePassword extends AppCompatActivity implements View.OnClickLis
     private EditText editTextOld, editTextNew,editTextCnfm;
     private Button changePassBtn;
     private ProgressDialog progressDialog;
+    SharedPrefManager sharedPrefManager_obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        sharedPrefManager_obj = SharedPrefManager.getInstance(getApplicationContext());
 
         editTextOld = findViewById(R.id.oldPassword);
         editTextNew = (EditText)findViewById(R.id.password);
@@ -51,7 +54,7 @@ public class changePassword extends AppCompatActivity implements View.OnClickLis
     public void changePassword(){
         final String oldPassword = editTextOld.getText().toString().trim();
         final String newPassword = editTextNew.getText().toString().trim();
-        final String email = "dinesh123@gmail.com";
+        final String email = sharedPrefManager_obj.getKeyEmail();
 
         progressDialog.setMessage("Processing...");
         progressDialog.show();

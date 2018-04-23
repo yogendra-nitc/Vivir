@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.adapter.SearchActivityAdapter;
+import com.example.yogendra.vivir.adapter.SearchAdapter;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
 import com.example.yogendra.vivir.tenant.SearchItem;
@@ -43,7 +44,7 @@ public class search extends Fragment {
     RecyclerView searchResult;
     List<SearchItem> flatList = new ArrayList<>();
 
-    SearchActivityAdapter adapter;
+    SearchAdapter adapter;
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -175,7 +176,7 @@ public class search extends Fragment {
                                 flatList.add(item);
                             }
 
-                            adapter = new SearchActivityAdapter(flatList,getContext());
+                            adapter = new SearchAdapter(flatList,getContext());
                             searchResult.setAdapter(adapter);
 
                         } catch (JSONException e) {

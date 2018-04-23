@@ -25,6 +25,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
+                    android:id="@+id/profileImage"
                     android:src = "@drawable/profile_img" android:contentDescription="@string/todo" />
             </LinearLayout>
             <LinearLayout

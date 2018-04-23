@@ -152,7 +152,7 @@
 
                     <Button
                         android:id="@+id/bookingRequest"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginBottom="10dp"
@@ -161,17 +161,6 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimary"
                         android:text="Book Now"
-                        android:textColor="#FFFFFF" />
-
-                    <Button
-                        android:id="@+id/paymentRequest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:background="@color/colorPrimary"
-                        android:text="Make Payment"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
 

@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +23,12 @@ import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.user.complainList;
 import com.example.yogendra.vivir.user.notification;
+import com.squareup.picasso.Picasso;
 
 public class user_dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private TextView userNameAtNav,userAdd,userEmail,userName,emailAtNav,userContact,active_since;
+        private ImageView profileImage;
         SharedPrefManager sharedPrefManager_obj;
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class user_dashboard extends AppCompatActivity
         userAdd       = findViewById(R.id.address);
         userEmail     = findViewById(R.id.email);
         userContact   = findViewById(R.id.contact);
+        profileImage = findViewById(R.id.profileImage);
         active_since  = findViewById(R.id.active_since);
 
         userNameAtNav.setText(sharedPrefManager_obj.getKeyName());
@@ -58,6 +62,10 @@ public class user_dashboard extends AppCompatActivity
         userName.setText(sharedPrefManager_obj.getKeyName());
         userContact.setText(sharedPrefManager_obj.getKeyContact());
         userAdd.setText(sharedPrefManager_obj.getKeyCity()+" , "+sharedPrefManager_obj.getKeyState());
+        active_since.setText(sharedPrefManager_obj.getRegDate());
+
+        String imageUrl = sharedPrefManager_obj.getKeyUrl();
+        Picasso.with(this).load(imageUrl).into(profileImage);
     }
 
     @Override
@@ -135,7 +143,7 @@ public class user_dashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_query)
         {
-            Toast.makeText(getApplicationContext(), "Your request has been sent",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "write complain",Toast.LENGTH_LONG).show();
             Intent in = new  Intent(user_dashboard.this , complainList.class);
             startActivity(in);
         }

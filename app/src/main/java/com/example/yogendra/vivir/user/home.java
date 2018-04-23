@@ -142,7 +142,9 @@ public class home extends Fragment implements View.OnClickListener {
                                                 obj.getString("userType"),
                                                 obj.getString("city"),
                                                 obj.getString("state"),
-                                                obj.getString("contact")
+                                                obj.getString("contact"),
+                                                obj.getString("regDate"),
+                                                obj.getString("url")
                                         );
                                 SharedPrefManager SharedPref_obj;
                                 SharedPref_obj = SharedPrefManager.getInstance(getContext());
