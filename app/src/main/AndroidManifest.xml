@@ -89,6 +89,7 @@
         <activity
             android:name=".user.setProfile"
             android:label="Set Profile"
+            android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.changePassword"

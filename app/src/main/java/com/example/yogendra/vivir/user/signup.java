@@ -1,6 +1,7 @@
 package com.example.yogendra.vivir.user;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.network.RequestHandler;
 import com.example.yogendra.vivir.database.defConstant;
 
@@ -74,6 +76,10 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+                            if(!jsonObject.getBoolean("error")) {
+                                Intent in = new Intent(signup.this, MainActivity.class);
+                                startActivity(in);
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

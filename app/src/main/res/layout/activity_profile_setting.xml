@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tools:android.support.design.widget.CoordinatorLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.yogendra.vivir.user.setProfile">
-<android.support.v4.widget.NestedScrollView
+   <android.support.v4.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
@@ -27,14 +27,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/apartment_name"
+                android:text="Name :"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptName"
+                android:id="@+id/name"
                 android:inputType="" />
         </LinearLayout>
         <LinearLayout
@@ -45,14 +45,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/locality"
+                android:text="City :"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptLocality"
+                android:id="@+id/city"
                 android:inputType="" />
         </LinearLayout>
         <LinearLayout
@@ -63,14 +63,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/city"
+                android:text="State :"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptCity"
+                android:id="@+id/state"
                 android:inputType="" />
         </LinearLayout>
         <LinearLayout
@@ -81,41 +81,33 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/type"
+                android:text="Contact :"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptType"
-                android:inputType="" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="4">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/rent_month"
-                android:textStyle="bold"
-                android:layout_weight="1.5"/>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2.5"
-                android:id="@+id/rentAmt"
+                android:id="@+id/contact"
                 android:inputType="" />
         </LinearLayout>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Continue"
+            android:text="Update Details"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:id="@+id/addApt"
+            android:id="@+id/changeDetails"
+            android:textColor="#FFFFFF"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Profile Picture"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:id="@+id/changeDP"
             android:textColor="#FFFFFF"
             android:background="@color/colorPrimary"
             android:layout_gravity="center"/>
@@ -123,5 +115,5 @@
 
 
 </android.support.v4.widget.NestedScrollView>
-</tools:android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
 

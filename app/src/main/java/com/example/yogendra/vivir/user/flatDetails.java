@@ -37,7 +37,7 @@ public class flatDetails extends AppCompatActivity {
     ViewPager viewPager;
     private ProgressDialog progressDialog;
     private TextView aptAdd,AptOwner,ownerEmail,ownerContact,rentAmt;
-    private Button bookingRequest,paymentRequest;
+    private Button bookingRequest;
     SharedPrefManager sharedPrefManager_obj;
 
     @Override
@@ -141,19 +141,10 @@ public class flatDetails extends AppCompatActivity {
         };
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
-    public void sendRequest()
+    public void bookingRequest()
     {
-        // Method for sending request
-        /* bookingRequest = (Button) findViewById(R.id.play);
-        bookingRequest.setVisibility(View.VISIBLE);
-        bookingRequest.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //when play is clicked show stop button and hide play button
-                playButton.setVisibility(View.GONE);
-                paymentRequest.setVisibility(View.VISIBLE);
-            }
-        });*/
+        // Method for booking Request
+
     }
 
     // METHOD FOR REDIRECTING TO EDIT fLAT DETAILS ACTIVITY

@@ -58,7 +58,7 @@ public class RegUserSearch extends AppCompatActivity {
 
         if(active.equals("owner"))
             setContentView(R.layout.my_flats);
-        else
+        else if(active.equals("tenant"))
             setContentView(R.layout.activity_reg_user_search);
             //Back button
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -68,7 +68,7 @@ public class RegUserSearch extends AppCompatActivity {
             searchResult.setLayoutManager(linearLayoutManager);
         if(active.equals("owner"))
             getMyFlats();
-        else
+        else if(active.equals("tenant"))
             getFlatData();
     }
 

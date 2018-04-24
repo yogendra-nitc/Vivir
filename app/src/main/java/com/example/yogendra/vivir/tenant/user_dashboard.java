@@ -28,7 +28,7 @@ import com.squareup.picasso.Picasso;
 public class user_dashboard extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         private TextView userNameAtNav,userAdd,userEmail,userName,emailAtNav,userContact,active_since;
-        private ImageView profileImage;
+        private ImageView profileImage,ImageAtNav;
         SharedPrefManager sharedPrefManager_obj;
         @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class user_dashboard extends AppCompatActivity
         userContact   = findViewById(R.id.contact);
         profileImage = findViewById(R.id.profileImage);
         active_since  = findViewById(R.id.active_since);
+        ImageAtNav    = header.findViewById(R.id.imageAtNav);
 
         userNameAtNav.setText(sharedPrefManager_obj.getKeyName());
         emailAtNav.setText(sharedPrefManager_obj.getKeyEmail());
@@ -66,6 +67,7 @@ public class user_dashboard extends AppCompatActivity
 
         String imageUrl = sharedPrefManager_obj.getKeyUrl();
         Picasso.with(this).load(imageUrl).into(profileImage);
+        Picasso.with(this).load(imageUrl).into(ImageAtNav);
     }
 
     @Override
