@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.network.RequestHandler;
@@ -31,6 +32,7 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
 
     private EditText editTextName,editTextCity,editTextState,editTextContact;
     private Button submitButton;
+    SharedPrefManager sharedPrefManager_obj;
     private ProgressDialog progressDialog;
 
     @Override
@@ -42,6 +44,7 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
         editTextCity = (EditText)findViewById(R.id.city);
         editTextState = (EditText)findViewById(R.id.state);
         editTextContact = (EditText)findViewById(R.id.contact);
+        sharedPrefManager_obj = SharedPrefManager.getInstance(getApplicationContext());
 
         submitButton = (Button)findViewById(R.id.changeDetails);
         progressDialog = new ProgressDialog(this);
@@ -82,6 +85,7 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                params.put("email",sharedPrefManager_obj.getKeyEmail());
                 params.put("name",Name);
                 params.put("city",City);
                 params.put("state",State);
