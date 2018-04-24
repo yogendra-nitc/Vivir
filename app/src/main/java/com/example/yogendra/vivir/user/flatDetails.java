@@ -78,8 +78,8 @@ public class flatDetails extends AppCompatActivity {
     // Apartment Details Display
     private void myApartment()
     {
-        //Intent in = getIntent();
-        final String aptId = "APT101V";
+        Intent in = getIntent();
+        final String aptId =in.getStringExtra("flatId");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(
@@ -147,13 +147,12 @@ public class flatDetails extends AppCompatActivity {
 
     }
 
-    // METHOD FOR REDIRECTING TO EDIT fLAT DETAILS ACTIVITY
+    // METHOD FOR REDIRECTING TO EDIT FLAT DETAILS ACTIVITY
     public void editApt(View v)
     {
         Intent in = new Intent(flatDetails.this, updateFlatRecord.class);
-       // Intent intent = getIntent();
-        //in.putExtra("aptId",intent.getStringExtra("flatId"));
-        in.putExtra("aptId","APT101V");
+        Intent intent = getIntent();
+        in.putExtra("aptId",intent.getStringExtra("flatId"));
         startActivity(in);
     }
 
