@@ -128,7 +128,7 @@ public class RegUserSearch extends AppCompatActivity {
         progressDialog.setMessage("loading data...");
 
         //sharedPrefManager_obj = SharedPrefManager.getInstance(this);
-        final String ownerId = "vjacko";
+        final String ownerId = sharedPrefManager_obj.getKeyEmail();
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 defConstant.URL_myApartment,

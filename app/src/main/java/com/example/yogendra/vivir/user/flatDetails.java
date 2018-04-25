@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,12 +33,13 @@ import org.w3c.dom.Text;
 import java.util.HashMap;
 import java.util.Map;
 
-public class flatDetails extends AppCompatActivity {
+public class flatDetails extends AppCompatActivity implements View.OnClickListener {
 
     ViewPager viewPager;
+    private ImageButton editAptBtn,delAptBtn;
+    private Button bookAptBtn;
     private ProgressDialog progressDialog;
     private TextView aptAdd,AptOwner,ownerEmail,ownerContact,rentAmt;
-    private Button bookingRequest;
     SharedPrefManager sharedPrefManager_obj;
 
     @Override
@@ -73,6 +75,17 @@ public class flatDetails extends AppCompatActivity {
         ownerEmail = (TextView)findViewById(R.id.ownerEmail);
         ownerContact = (TextView)findViewById(R.id.ownerContact);
         rentAmt = (TextView)findViewById(R.id.aptRent);
+
+        // BUTTON FOR ACTIVATING ACTIVITIES
+        editAptBtn = findViewById(R.id.editApt);
+        delAptBtn = findViewById(R.id.deleteApt);
+        bookAptBtn = findViewById(R.id.bookingRequest);
+
+        // METHOD CALLING USING SET ONCLICK LISTENER
+        editAptBtn.setOnClickListener(this);
+        delAptBtn.setOnClickListener(this);
+        bookAptBtn.setOnClickListener(this);
+
     }
 
     // Apartment Details Display
@@ -141,14 +154,18 @@ public class flatDetails extends AppCompatActivity {
         };
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
-    public void bookingRequest()
+
+    // FLAT BOOKING REQUEST
+    public void bookApartment()
     {
-        // Method for booking Request
+        Toast.makeText(getApplicationContext(),"Booking Button working",Toast.LENGTH_LONG).show();
+
 
     }
 
-    // METHOD FOR REDIRECTING TO EDIT FLAT DETAILS ACTIVITY
-    public void editApt(View v)
+
+   // METHOD FOR REDIRECTING TO EDIT FLAT DETAILS ACTIVITY
+    public void editApartment()
     {
         Intent in = new Intent(flatDetails.this, updateFlatRecord.class);
         Intent intent = getIntent();
@@ -157,9 +174,24 @@ public class flatDetails extends AppCompatActivity {
     }
 
     //METHOD FOR DELETING FLAT RECORD
-    public void deleteApt(View v)
+    public void delApartment()
     {
-        // create a dialouge box for deletion and redirect to RegUserSearch
+        Toast.makeText(getApplicationContext(),"Button working",Toast.LENGTH_LONG).show();
 
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.bookingRequest:
+                bookApartment();
+                break;
+            case R.id.editApt:
+                editApartment();
+                break;
+            case R.id.deleteApt:
+                delApartment();
+                break;
+        }
     }
 }

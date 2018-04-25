@@ -173,13 +173,12 @@
                     android:weightSum="2">
 
                     <android.support.v7.widget.AppCompatImageButton
-                        android:id="@+id/deletApt"
+                        android:id="@+id/deleteApt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="8dp"
-                        android:onClick="deleteApt"
                         app:backgroundTint="#F38A85"
                         app:fabSize="normal"
                         app:srcCompat="@android:drawable/ic_menu_delete" />
@@ -192,7 +191,6 @@
                         android:layout_marginRight="16dp"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="1"
-                        android:onClick="editApt"
                         app:backgroundTint="#B1BE88"
                         app:fabSize="normal"
                         app:srcCompat="@android:drawable/ic_menu_edit" />
