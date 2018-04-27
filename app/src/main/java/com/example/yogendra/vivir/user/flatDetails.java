@@ -158,9 +158,42 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
     // FLAT BOOKING REQUEST
     public void bookApartment()
     {
-        Toast.makeText(getApplicationContext(),"Booking Button working",Toast.LENGTH_LONG).show();
 
+        final String email = sharedPrefManager_obj.getKeyEmail();
+        Intent in = getIntent();
+        final String aptId =in.getStringExtra("flatId");
+        progressDialog.show();
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                defConstant.URL_BOOK_APT,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog.hide();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
+                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("email",email);
+                params.put("aptId",aptId);
+                return params;
+            }
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
 
