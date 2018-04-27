@@ -101,16 +101,33 @@
             android:textColor="#FFFFFF"
             android:background="@color/colorPrimary"
             android:layout_gravity="center"/>
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change Profile Picture"
-            android:layout_marginTop="30dp"
-            android:padding="10dp"
-            android:id="@+id/changeDP"
-            android:textColor="#FFFFFF"
-            android:background="@color/colorPrimary"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/click_to_reg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:text="Click to Change Display Picture..."
+                android:textStyle="bold"
+                />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@android:drawable/ic_media_ff"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="mini" />
+        </LinearLayout>
     </LinearLayout>
 
 

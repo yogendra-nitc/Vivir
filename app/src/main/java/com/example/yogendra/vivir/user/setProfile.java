@@ -52,7 +52,7 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
         submitButton.setOnClickListener(this);
     }
 
-    public void registerUser(){
+    public void setMyProfile(){
         final String Name = editTextName.getText().toString().trim();
         final String City = editTextCity.getText().toString().trim();
         final String State = editTextState.getText().toString().trim();
@@ -70,6 +70,14 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+
+                            // SETTING THE VALUES OF SHARED PREFERENCE MANAGER
+                            sharedPrefManager_obj.userLogin(sharedPrefManager_obj.getKeyEmail(),Name,
+                                    sharedPrefManager_obj.getKeyUtype(),City,State,Contact,sharedPrefManager_obj.getRegDate(),
+                                    sharedPrefManager_obj.getKeyUrl());
+
+                            finish();
+                            startActivity(getIntent());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -99,7 +107,7 @@ public class setProfile extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view){
         if(view == submitButton){
-            registerUser();
+            setMyProfile();
         }
     }
 
