@@ -62,6 +62,11 @@ public class updateFlatRecord extends AppCompatActivity implements View.OnClickL
                         progressDialog.dismiss();
                         try {
                             JSONObject jsonObject = new JSONObject(response);
+                            editTextaptName.setText(jsonObject.getString("aptName"));
+                            editTextLocality.setText(jsonObject.getString("aptLocality"));
+                            editTextCity.setText(jsonObject.getString("aptCity"));
+                            editTextType.setText(jsonObject.getString("aptType"));
+                            editTextRent.setText(jsonObject.getString("rentAmt"));
 
                         } catch (JSONException e) {
                             e.printStackTrace();

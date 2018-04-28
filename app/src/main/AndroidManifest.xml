@@ -85,7 +85,7 @@
         <activity
             android:name=".owner.updateFlatRecord"
             android:label="Update Flat Details"
-            android:parentActivityName=".user.flatDetails"
+            android:parentActivityName=".tenant.RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.setProfile"
