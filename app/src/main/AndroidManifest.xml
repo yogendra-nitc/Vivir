@@ -53,13 +53,13 @@
             android:parentActivityName=".tenant.RegUserSearch"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".user.requestList"
+            android:name=".owner.requestList"
             android:label="Approve Request"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.requestDetails"
             android:label="Approve Request"
-            android:parentActivityName=".user.requestList"
+            android:parentActivityName=".owner.requestList"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".user.notification"
@@ -77,10 +77,6 @@
             android:name=".tenant.uploadRentDetails"
             android:label="Upload Rent Details"
             android:parentActivityName=".tenant.user_dashboard"
-            android:theme="@style/RestAppTheme" />
-        <activity
-            android:name=".owner.deleteFlatRecord"
-            android:label="My Flats"
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.updateFlatRecord"

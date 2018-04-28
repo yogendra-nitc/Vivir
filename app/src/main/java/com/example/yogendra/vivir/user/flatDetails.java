@@ -256,7 +256,7 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
     {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(flatDetails.this);
-        builder.setMessage("Click OK to confirm...").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setMessage("Click OK to confirm deletion...").setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 deleteApt();
@@ -267,6 +267,7 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
         alert.show();
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId())

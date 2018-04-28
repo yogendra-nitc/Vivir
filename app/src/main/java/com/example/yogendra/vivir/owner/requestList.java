@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.yogendra.vivir.R;
 
-public class deleteFlatRecord extends AppCompatActivity {
+public class requestList extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_flat_record);
+        setContentView(R.layout.activity_request_list);
     }
 }

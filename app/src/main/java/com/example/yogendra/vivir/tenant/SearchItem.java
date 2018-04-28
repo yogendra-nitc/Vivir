@@ -25,7 +25,7 @@ public class SearchItem {
     }
 
     public String getName() {
-        name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
+        //name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
         return name;
     }
 
@@ -34,8 +34,7 @@ public class SearchItem {
     }
 
     public String getPicture() {
-        imageURL = "https://vivir18.000webhostapp.com/vivir/media/"+imageURL;
-        return imageURL;
+        return "https://vivir18.000webhostapp.com/vivir/media/"+imageURL;
     }
 
     public void setName(String name) {

@@ -123,16 +123,6 @@ public class finder extends Fragment {
                 startActivity(in);
             }
         });
-        //Left side Button-4
-        Button deleteFlatRecord;
-        deleteFlatRecord = view.findViewById(R.id.deleteFlatRecord);
-        deleteFlatRecord.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.owner.deleteFlatRecord.class);
-                startActivity(in);
-            }
-        });
 
         //Left-side Button-5
         Button getFlatDetails;
@@ -195,7 +185,7 @@ public class finder extends Fragment {
         requestList.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.user.requestList.class);
+                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.owner.requestList.class);
                 startActivity(in);
             }
         });

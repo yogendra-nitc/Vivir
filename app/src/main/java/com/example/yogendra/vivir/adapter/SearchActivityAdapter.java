@@ -29,6 +29,7 @@ public class SearchActivityAdapter  extends
     public SearchActivityAdapter(List<SearchItem> flatList, Context context) {
         this.flatList = flatList;
         this.context = context;
+        //setHasStableIds(true);
     }
 
     @Override
@@ -54,8 +55,8 @@ public class SearchActivityAdapter  extends
             }
         });
     }
-
-    @Override    public int getItemCount() {
+    @Override
+    public int getItemCount() {
         return flatList.size();
     }
 
