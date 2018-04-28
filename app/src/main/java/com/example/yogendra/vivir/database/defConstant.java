@@ -18,4 +18,5 @@ public class defConstant {
     public  static  final String URL_BOOK_APT = ROOT_URL + "bookApt.php";
     public  static  final String URL_GET_APT_EDIT = ROOT_URL + "getAptEdit.php";
     public  static  final String URL_SET_APT_EDIT = ROOT_URL + "setAptEdit.php";
+    public  static  final String URL_DELETE_APT = ROOT_URL + "deleteApt.php";
 }

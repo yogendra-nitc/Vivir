@@ -1,6 +1,8 @@
 package com.example.yogendra.vivir.user;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ import com.example.yogendra.vivir.database.defConstant;
 import com.example.yogendra.vivir.network.RequestHandler;
 import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.owner.updateFlatRecord;
+import com.example.yogendra.vivir.tenant.RegUserSearch;
 import com.example.yogendra.vivir.tenant.user_dashboard;
 
 import org.json.JSONException;
@@ -206,10 +209,62 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
         startActivity(in);
     }
 
+
     //METHOD FOR DELETING FLAT RECORD
+
+    public void deleteApt()
+    {
+        Intent in = getIntent();
+        final String aptId =in.getStringExtra("flatId");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                defConstant.URL_DELETE_APT,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog.hide();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
+                            Intent in = new Intent(getApplicationContext(), RegUserSearch.class);
+                            startActivity(in);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.hide();
+                        Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("aptId",aptId);
+                return params;
+            }
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+// TAKING CONFIRMATION BEFORE DELETION - ALERT DIALOG BOX
     public void delApartment()
     {
-        Toast.makeText(getApplicationContext(),"Button working",Toast.LENGTH_LONG).show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(flatDetails.this);
+        builder.setMessage("Click OK to confirm...").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteApt();
+            }
+        }).setNegativeButton("Cancel",null);
+
+        AlertDialog alert = builder.create();
+        alert.show();
 
     }
     @Override
