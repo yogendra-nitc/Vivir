@@ -1,26 +1,27 @@
-package com.example.yogendra.vivir.tenant;
+package com.example.yogendra.vivir.owner;
 
 /**
- * Created by yogendra on 29/3/18.
+ * Created by yogendra on 29/4/18.
  */
 
-public class SearchItem {
+
+public class RequestItem  {
     private String name;
     private String id;
-   // private String locality;
-   // private String city;
-   // private String rentAmt;
+    // private String locality;
+    // private String city;
+    // private String rentAmt;
     //private String aptType;
     private String imageURL;
 
-    public SearchItem(String id,String name, String locality, String city,
+    public RequestItem(String id,String name, String locality, String city,
                       String rentAmt, String aptType, String imageURL) {
         this.id = id;
         this.name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
         //this.locality = locality;
         //this.city = city;
-       // this.rentAmt = rentAmt;
-       // this.aptType = aptType;
+        // this.rentAmt = rentAmt;
+        // this.aptType = aptType;
         this.imageURL = imageURL;
     }
 
