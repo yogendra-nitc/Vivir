@@ -1,4 +1,4 @@
-package com.example.yogendra.vivir.user;
+package com.example.yogendra.vivir.owner;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

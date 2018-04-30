@@ -54,10 +54,11 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".owner.requestList"
-            android:label="Approve Request"
+            android:label="Requests"
+            android:parentActivityName=".owner.OwnerDashboard"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".user.requestDetails"
+            android:name=".owner.requestDetails"
             android:label="Approve Request"
             android:parentActivityName=".owner.requestList"
             android:theme="@style/RestAppTheme" />

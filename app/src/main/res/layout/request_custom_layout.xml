@@ -19,6 +19,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:id="@+id/request_image"
                 android:src="@drawable/ic_power_settings_new_black_24dp"/>
         </LinearLayout>
         <LinearLayout
@@ -35,6 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dinesh Maurya"
+                    android:id="@+id/tenant_name"
                     android:textSize="18sp"
                     android:padding="16dp"
                     />
@@ -42,6 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="05-06-1993"
+                    android:id="@+id/request_date"
                     android:paddingLeft="8dp"
                     android:textAlignment="center"/>
             </LinearLayout>
@@ -53,6 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mr. Yogendra want to book your Apt.."
+                    android:id="@+id/request_text"
                     android:padding="8dp"/>
             </LinearLayout>
         </LinearLayout>

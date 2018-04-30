@@ -174,7 +174,7 @@ public class finder extends Fragment {
         requestDetails.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.user.requestDetails.class);
+                Intent in = new  Intent(getActivity() , com.example.yogendra.vivir.owner.requestDetails.class);
                 startActivity(in);
             }
         });

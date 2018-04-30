@@ -11,19 +11,14 @@ package com.example.yogendra.vivir.adapter;
         import android.view.ViewGroup;
         import android.widget.ImageView;
         import android.widget.TextView;
-        import android.widget.Toast;
 
         import com.example.yogendra.vivir.R;
         import com.example.yogendra.vivir.owner.RequestItem;
-        import com.example.yogendra.vivir.tenant.RegUserSearch;
-        import com.example.yogendra.vivir.tenant.SearchItem;
-        import com.example.yogendra.vivir.user.flatDetails;
-        import com.squareup.picasso.Picasso;
+        import com.example.yogendra.vivir.owner.requestDetails;
 
         import java.util.ArrayList;
         import java.util.List;
 
-/** * Created by yogenddra on 29/03/2018. */
 
 public class RequestAdapter  extends
         RecyclerView.Adapter<RequestAdapter.Holderview>{
@@ -34,13 +29,12 @@ public class RequestAdapter  extends
     public RequestAdapter(List<RequestItem> requestList, Context context) {
         this.requestList = requestList;
         this.context = context;
-        //setHasStableIds(true);
     }
 
     @Override
     public Holderview onCreateViewHolder(ViewGroup parent, int viewType) {
         View layout= LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.search_custom_layout, parent,false);
+                inflate(R.layout.request_custom_layout, parent,false);
 
         return new Holderview(layout);
     }
@@ -49,13 +43,16 @@ public class RequestAdapter  extends
     public void onBindViewHolder(Holderview holder, final int position) {
 
         holder.v_name.setText(requestList.get(position).getName());
-        Picasso.with(context).load(requestList.get(position).getPicture()).into(holder.v_image);
+        holder.v_rdate.setText(requestList.get(position).getRdate());
+        holder.v_text.setText(requestList.get(position).getName()+"sent you a...");
+        holder.v_image.setImageResource(requestList.get(position).getImage());
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(context,flatDetails.class);
-                in.putExtra("flatId" , requestList.get(position).getId());
+               Intent in = new Intent(context,requestDetails.class);
+               in.putExtra("rid" , requestList.get(position).getId());
                 view.getContext().startActivity(in);
             }
         });
@@ -66,7 +63,7 @@ public class RequestAdapter  extends
     }
 
 
-    public void setfilter(List<SearchItem> listitem)
+    public void setfilter(List<RequestItem> listitem)
     {
         requestList=new ArrayList<>();
         requestList.addAll(listitem);
@@ -76,13 +73,16 @@ public class RequestAdapter  extends
     {
         ImageView v_image;
         TextView v_name;
+        TextView v_rdate;
+        TextView v_text;
 
         Holderview(View itemview)
         {
             super(itemview);
-            v_image=(ImageView) itemView.findViewById(R.id.flatImage);
-            v_name = (TextView) itemView.findViewById(R.id.flatTitle);
-
+            v_image=(ImageView)itemView.findViewById(R.id.request_image);
+            v_name = (TextView)itemView.findViewById(R.id.tenant_name);
+            v_rdate = (TextView)itemview.findViewById(R.id.request_date);
+            v_text = (TextView)itemview.findViewById(R.id.request_text);
         }
     }
 }

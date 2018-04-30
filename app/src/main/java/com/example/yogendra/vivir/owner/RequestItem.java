@@ -1,52 +1,66 @@
 package com.example.yogendra.vivir.owner;
 
 /**
- * Created by yogendra on 29/4/18.
+ * Created by yogendra on 29/4/30.
  */
 
 
 public class RequestItem  {
+    private String rid;
     private String name;
-    private String id;
-    // private String locality;
-    // private String city;
-    // private String rentAmt;
-    //private String aptType;
-    private String imageURL;
+    private String rtype;
+    private String rdate;
+    private int image;
 
-    public RequestItem(String id,String name, String locality, String city,
-                      String rentAmt, String aptType, String imageURL) {
-        this.id = id;
-        this.name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
-        //this.locality = locality;
-        //this.city = city;
-        // this.rentAmt = rentAmt;
-        // this.aptType = aptType;
-        this.imageURL = imageURL;
+    public RequestItem(String rid,String name, String rtype, String rdate,
+                      int image) {
+        this.rid = rid;
+        this.name = name;
+        this.rtype = rtype;
+        this.rdate = rdate;
+        this.image = image;
+    }
+
+    //Getters
+    public String getId() {
+        return rid;
     }
 
     public String getName() {
-        //name = name +", " + locality+",  "+city+" ,  "+aptType+"BHK,   "+"Rs."+rentAmt+"/month";
         return name;
     }
 
-    public String getId() {
-        return id;
+    public String getRtype() {
+        return rtype;
     }
 
-    public String getPicture() {
-        return "https://vivir18.000webhostapp.com/vivir/media/"+imageURL;
+    public String getRdate() {
+        return rdate;
     }
 
+    public int getImage() {
+        return image;
+    }
+
+    //Setters
     public void setName(String name) {
         this.name = name;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.rid = id;
     }
 
-    public void setPicture(String picture) {
-        this.imageURL = picture;
+    public void setRtype(String rtype) {
+        this.rtype = rtype;
     }
+
+    public void setRdate(String rdate) {
+        this.rdate = rdate;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
+
 }
