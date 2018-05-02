@@ -17,12 +17,16 @@
         			foreach($userDetails as $data)
         			{
         				$response['error'] = false;
+        				$response['message'] = "Loggedin Successfully";
         				$response['email'] = $data['email'];
         				$response['name'] = $data['name'];
         				$response['userType'] = $data['userType'];
         				$response['image'] = $data['image'];
         				$response['city'] = $data['city'];
         				$response['state'] = $data['state'];
+        				$response['contact'] = $data['contact'];
+        				$response['regDate'] = $data['regDate'];
+                        $response['url'] = "https://vivir18.000webhostapp.com/vivir/media/".$data['image'];
         			}
         		}
         		else if($result==1)

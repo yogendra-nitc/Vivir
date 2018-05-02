@@ -15,6 +15,6 @@
 			    }
 			}
 	}
-    echo json_encode(array("AllFlat"=>$response));
+    echo json_encode(array("MyFlats"=>$response));
 
 ?>
