@@ -53,6 +53,7 @@ public class RequestAdapter  extends
             public void onClick(View view) {
                Intent in = new Intent(context,requestDetails.class);
                in.putExtra("rid" , requestList.get(position).getId());
+               in.putExtra("rtype" , requestList.get(position).getRtype());
                 view.getContext().startActivity(in);
             }
         });

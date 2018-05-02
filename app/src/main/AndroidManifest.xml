@@ -76,7 +76,7 @@
             android:theme="@style/RestAppTheme" />
         <activity
             android:name=".tenant.uploadRentDetails"
-            android:label="Upload Rent Details"
+            android:label="Rent Details"
             android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
