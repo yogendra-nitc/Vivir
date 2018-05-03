@@ -228,7 +228,7 @@ public class requestDetails extends AppCompatActivity implements View.OnClickLis
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
-// METHOD FOR REJECTING REQUEST
+// METHOD FOR Tenants REJECTING REQUEST
     public void rejectRequest()
     {
         Intent in = getIntent();
