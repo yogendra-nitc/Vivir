@@ -3,9 +3,9 @@ include('Database.php');
    class User extends Database {
     
     //Method for setting profile
-    public function setProfile($name, $city, $state, $contact)
+    public function setProfile($email,$name, $city, $state, $contact)
     {
-        $sql = "UPDATE user set name = '$name' and city = '$city' and state= '$state' and contact = '$contact' where email = '$email'";
+        $sql = "UPDATE user set name = '$name', city = '$city', state= '$state', contact = '$contact' where email = '$email'";
         $result = $this->connect()->query($sql);
         if($result)
             return true;
@@ -36,9 +36,10 @@ include('Database.php');
 
             $oid = $row['ownerid'];
             $rtype = "booking";
+            $rdate = date("Y-m-d");
 
             // INSERTION REQUEST TABLE
-            $sql = "INSERT INTO request(rid,tid,ownerid,rtype,aptId)VALUES(null,'$tid','$oid','$rtype','$aptId')";
+            $sql = "INSERT INTO request(rid,tid,ownerid,rtype,aptId,rdate)VALUES(null,'$tid','$oid','$rtype','$aptId','$rdate')";
             $result = $this->connect()->query($sql);
             if($result)
             {
@@ -51,7 +52,6 @@ include('Database.php');
                 $res = $this->connect()->query($sql1);
                 $row = $res->fetch_array(MYSQLI_BOTH);
                 $name = $row['name'];
-                echo $name;
                 $content = $name." "."has requested for booking your flat...";
 
                 // INSERTION IN NOTIFICATION TABLE

@@ -19,13 +19,14 @@ include('Database.php');
         	$result = $this->connect()->query($sql);
         	$row = $result->fetch_array(MYSQLI_BOTH);
 
-        	$ownerid = $row['ownerid'];
-        	$sql = "SELECT email from owner WHERE oid = '$ownerid'";
-        	$result = $this->connect()->query($sql);
-        	$row = $result->fetch_array(MYSQLI_BOTH);
+        	//$ownerid = $row['ownerid'];
+        //	$sql = "SELECT email from owner WHERE oid = '$ownerid'";
+        //	$result = $this->connect()->query($sql);
+        //	$row = $result->fetch_array(MYSQLI_BOTH);
 
-        	$email = $row['email'];
+        	$email =  $row['ownerid'];
 
+        	$data = array();
 
         	//GET OWNER DATA
         	$sql = "SELECT email,name,contact FROM user where email = '$email'";

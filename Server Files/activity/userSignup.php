@@ -16,12 +16,12 @@
                         if($result == 1)
                         {
                             $response['error'] = false; 
-                            $response['message'] = "User registered successfully";
+                            $response['message'] = "Successfully Registered";
                         }
                         elseif($result == 0)
                         {
                             $response['error'] = true; 
-                            $response['message'] = "It seems you are already registered, please choose a different email and username";                     
+                            $response['message'] = "It seems you are already registered, please choose a different email";                     
                         }
                         else
                         {

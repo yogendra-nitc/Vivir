@@ -14,7 +14,8 @@ include('Database.php');
             }
             else
             {
-                $sql = "INSERT INTO user(email, password,name,userType)VALUES('$email','$password','$name','$userType')";
+                $rdate = date("Y-m-d");
+                $sql = "INSERT INTO user(email, password,name,userType,regDate)VALUES('$email','$password','$name','$userType','$rdate')";
                 $result = $this->connect()->query($sql);
                 
                 // id generation
@@ -82,8 +83,7 @@ include('Database.php');
             $data[] = $row; 
             return $data;
         }
-
- //******** CHNAGE PASSWORD *********
+   //******** CHNAGE PASSWORD *********
 	    public function changePassword($email, $oldPwd, $newPwd)
 	    {
 	    	$sql = "SELECT * FROM user where email = '$email' and password = '$oldPwd'";
