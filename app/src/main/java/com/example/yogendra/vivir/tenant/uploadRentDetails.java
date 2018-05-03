@@ -13,5 +13,6 @@ public class uploadRentDetails extends AppCompatActivity {
         setContentView(R.layout.activity_upload_rent_details);
         //Adding back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

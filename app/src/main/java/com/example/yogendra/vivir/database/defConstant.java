@@ -21,4 +21,6 @@ public class defConstant {
     public  static  final String URL_DELETE_APT = ROOT_URL + "deleteApt.php";
     public  static  final String URL_allRequest = ROOT_URL + "getRequest.php";
     public  static  final String URL_getRequestDetails = ROOT_URL + "getRequestDetails.php";
+    public  static  final String URL_REJECT_REQUEST = ROOT_URL + "rejectRequest.php";
+    public  static  final String URL_ACCEPT_REQUEST = ROOT_URL + "acceptRequest.php";
 }

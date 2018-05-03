@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,9 +25,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class requestDetails extends AppCompatActivity {
+public class requestDetails extends AppCompatActivity implements View.OnClickListener{
     private ProgressDialog progressDialog;
     private TextView specificRequest,tenantName,aptName,rDate,Dues,paymentAmount,paymentDate;
+    private Button acceptRequest, rejectRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,9 @@ public class requestDetails extends AppCompatActivity {
             specificRequest.setText("Rent Approval");
         }
 
+        acceptRequest = findViewById(R.id.accept_request);
+        rejectRequest = findViewById(R.id.reject_request);
+
         tenantName = (TextView)findViewById(R.id.tenant_name);
         aptName = (TextView)findViewById(R.id.apt_name);
         rDate = (TextView) findViewById(R.id.rdate);
@@ -93,6 +98,8 @@ public class requestDetails extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Processing...");
         requestDetails();
+        acceptRequest.setOnClickListener(this);
+        rejectRequest.setOnClickListener(this);
 
     }
 
@@ -118,9 +125,13 @@ public class requestDetails extends AppCompatActivity {
                                 tenantName.setText(obj.getString("tenantName"));
                                 aptName.setText(obj.getString("aptName"));
                                 rDate.setText(obj.getString("rDate"));
-                                Dues.setText(obj.getString("Dues"));
-                                paymentAmount.setText("Rs."+obj.getString("paymentAmount"));
-                                paymentDate.setText(obj.getString("paymentDate"));
+
+                                if((obj.getString("rtype")).equals("leaving"))
+                                    Dues.setText(obj.getString("Dues"));
+                                else if((obj.getString("rtype")).equals("rent")) {
+                                    paymentAmount.setText("Rs." + obj.getString("paymentAmount"));
+                                    paymentDate.setText(obj.getString("paymentDate"));
+                                }
                             }
                             else
                             {
@@ -162,7 +173,129 @@ public class requestDetails extends AppCompatActivity {
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
 
+// METHOD FOR ACCEPTING REQUEST
+    public void acceptRequest()
+    {
+        Intent in = getIntent();
+        final String rid =in.getStringExtra("rid");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                defConstant.URL_ACCEPT_REQUEST,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        progressDialog.dismiss();
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            Toast.makeText(
+                                    getApplicationContext(),
+                                    obj.getString("message"),
+                                    Toast.LENGTH_LONG
+                            ).show();
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        progressDialog.dismiss();
+                        Toast.makeText(
+                                getApplicationContext(),
+                                error.getMessage(),
+                                Toast.LENGTH_LONG
+                        ).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
+                Map <String, String> params = new HashMap<>();
+                params.put("rid",rid);
+                return params;
+            }
+
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+// METHOD FOR REJECTING REQUEST
+    public void rejectRequest()
+    {
+        Intent in = getIntent();
+        final String rid =in.getStringExtra("rid");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                defConstant.URL_REJECT_REQUEST,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        progressDialog.dismiss();
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                              Toast.makeText(
+                                        getApplicationContext(),
+                                        obj.getString("message"),
+                                        Toast.LENGTH_LONG
+                                ).show();
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        progressDialog.dismiss();
+                        Toast.makeText(
+                                getApplicationContext(),
+                                error.getMessage(),
+                                Toast.LENGTH_LONG
+                        ).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
+                Map <String, String> params = new HashMap<>();
+                params.put("rid",rid);
+                return params;
+            }
+
+        };
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+    }
 
     public void viewProfile(View view) {
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.accept_request:
+                acceptRequest();
+                break;
+            case R.id.reject_request:
+                rejectRequest();
+                break;
+        }
     }
 }

@@ -19,6 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:orientation="horizontal"
             android:weightSum="4">
             <TextView
@@ -27,17 +28,18 @@
                 android:text="Apartment"
                 android:textStyle="bold"
                 android:layout_weight="1.5"/>
-            <Spinner
-                android:layout_width="match_parent"
+            <EditText
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptName"
-                android:inputType=""/>
+                android:id="@+id/aptId"
+                android:hint="APT##...V" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="15dp"
             android:weightSum="4">
             <TextView
                 android:layout_width="0dp"
@@ -56,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
             android:weightSum="4">
             <TextView
                 android:layout_width="0dp"
