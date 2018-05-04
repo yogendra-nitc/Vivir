@@ -18,7 +18,6 @@ import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.main.finder;
 import com.example.yogendra.vivir.tenant.RegUserSearch;
-import com.example.yogendra.vivir.user.complainList;
 import com.example.yogendra.vivir.user.notification;
 
 public class OwnerDashboard extends AppCompatActivity

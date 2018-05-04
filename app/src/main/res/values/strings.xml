@@ -66,4 +66,5 @@
     <string name="select_images">Select images</string>
     <string name="continue_btn">Continue</string>
     <string name="image_name">image name</string>
+    <string name="title_activity_complain">complain</string>
 </resources>

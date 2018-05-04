@@ -1,8 +1,6 @@
 package com.example.yogendra.vivir.tenant;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -13,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,7 +18,6 @@ import android.widget.Toast;
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
-import com.example.yogendra.vivir.user.complainList;
 import com.example.yogendra.vivir.user.notification;
 import com.squareup.picasso.Picasso;
 
