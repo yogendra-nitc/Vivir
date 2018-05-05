@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
@@ -135,8 +136,7 @@ public class OwnerDashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_complaints)
         {
-            Intent in = new  Intent(OwnerDashboard.this , complainList.class);
-            startActivity(in);
+            Toast.makeText(getApplicationContext(),"Add this link",Toast.LENGTH_LONG).show();
         }
         else if (id == R.id.nav_request)
         {

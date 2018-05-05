@@ -68,10 +68,6 @@
             android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
         <activity
-            android:name=".user.writeComplain"
-            android:label="Complaints"
-            android:theme="@style/RestAppTheme" />
-        <activity
             android:name=".tenant.uploadRentDetails"
             android:label="Rent Details"
             android:parentActivityName=".tenant.user_dashboard"

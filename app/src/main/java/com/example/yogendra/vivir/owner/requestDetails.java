@@ -178,6 +178,7 @@ public class requestDetails extends AppCompatActivity implements View.OnClickLis
     {
         Intent in = getIntent();
         final String rid =in.getStringExtra("rid");
+        final String requestType =in.getStringExtra("rtype");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(
@@ -221,6 +222,7 @@ public class requestDetails extends AppCompatActivity implements View.OnClickLis
             {
                 Map <String, String> params = new HashMap<>();
                 params.put("rid",rid);
+                params.put("rtype",requestType);
                 return params;
             }
 

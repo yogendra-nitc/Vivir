@@ -142,8 +142,6 @@ public class user_dashboard extends AppCompatActivity
         else if (id == R.id.nav_query)
         {
             Toast.makeText(getApplicationContext(), "write complain",Toast.LENGTH_LONG).show();
-            Intent in = new  Intent(user_dashboard.this , complainList.class);
-            startActivity(in);
         }
         else if (id == R.id.nav_leaving)
         {

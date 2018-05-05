@@ -16,6 +16,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="70dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use proper format for filling the data."
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +38,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptId"
+                android:id="@+id/apt_id"
                 android:hint="APT##...V" />
         </LinearLayout>
         <LinearLayout
@@ -51,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptLocality"
+                android:id="@+id/amt_paid"
                 android:inputType="" />
         </LinearLayout>
         <LinearLayout
@@ -70,16 +76,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
-                android:id="@+id/aptCity"
+                android:id="@+id/payment_date"
+                android:hint="0000-00-00"
                 android:inputType="" />
         </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:id="@+id/addApt"
+            android:id="@+id/rent_submit"
             android:textColor="#FFFFFF"
             android:background="@color/colorPrimary"
             android:layout_gravity="center"/>
