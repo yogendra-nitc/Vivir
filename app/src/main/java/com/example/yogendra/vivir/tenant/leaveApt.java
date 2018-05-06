@@ -106,6 +106,7 @@ public class leaveApt extends AppCompatActivity implements View.OnClickListener{
         };
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
     }
+    
     @Override
     public void onClick(View view){
         if(view == leaveFlat){
