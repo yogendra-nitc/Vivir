@@ -192,11 +192,9 @@ public class requestDetails extends AppCompatActivity implements View.OnClickLis
                         progressDialog.dismiss();
                         try{
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(
-                                    getApplicationContext(),
-                                    obj.getString("message"),
-                                    Toast.LENGTH_LONG
-                            ).show();
+                            Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                                Intent in = new Intent(getApplicationContext(),requestList.class);
+                                startActivity(in);
 
                         }catch (JSONException e){
                             e.printStackTrace();
@@ -253,6 +251,11 @@ public class requestDetails extends AppCompatActivity implements View.OnClickLis
                                         obj.getString("message"),
                                         Toast.LENGTH_LONG
                                 ).show();
+                              if(obj.getString("error").equals("false"))
+                              {
+                                  Intent in = new Intent(getApplicationContext(),requestList.class);
+                                  startActivity(in);
+                              }
 
                         }catch (JSONException e){
                             e.printStackTrace();

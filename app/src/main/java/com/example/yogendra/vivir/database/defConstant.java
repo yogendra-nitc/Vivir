@@ -25,4 +25,5 @@ public class defConstant {
     public  static  final String URL_ACCEPT_REQUEST = ROOT_URL + "acceptRequest.php";
     public  static  final String URL_getNotifications = ROOT_URL + "getNotification.php";
     public  static  final String URL_FILL_RENT = ROOT_URL + "fillRent.php";
+    public  static  final String URL_LEAVE_FLAT = ROOT_URL + "leaveFlat.php";
 }

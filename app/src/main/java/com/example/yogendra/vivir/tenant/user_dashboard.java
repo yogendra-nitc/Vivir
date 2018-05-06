@@ -145,7 +145,9 @@ public class user_dashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_leaving)
         {
-            Toast.makeText(getApplicationContext(), "Your request has been sent",Toast.LENGTH_LONG).show();
+            Intent in = new  Intent(user_dashboard.this , leaveApt.class);
+            startActivity(in);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

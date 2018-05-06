@@ -91,6 +91,11 @@
             android:name=".owner.OwnerDashboard"
             android:label="My Profile"
             android:theme="@style/AppTheme" />
+        <activity android:name=".tenant.leaveApt"
+            android:label="Leave Flat"
+            android:parentActivityName=".tenant.user_dashboard"
+            android:theme="@style/RestAppTheme"
+            />
     </application>
 
 </manifest>
