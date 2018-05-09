@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:orientation="vertical"
+app:cardCornerRadius="1dp"
+app:cardUseCompatPadding="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="7"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="3.5"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dinesh Maurya"
+                android:id="@+id/sender_name"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:padding="16dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="02-05-2018"
+                android:id="@+id/complain_date"
+                android:paddingLeft="8dp"
+                android:textAlignment="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="3.5">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receiver name"
+                android:id="@+id/receiver_name"
+                android:paddingLeft="16dp"
+                android:paddingTop="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
