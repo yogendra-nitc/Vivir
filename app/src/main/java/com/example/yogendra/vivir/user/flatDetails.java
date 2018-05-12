@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +29,7 @@ import com.example.yogendra.vivir.owner.OwnerDashboard;
 import com.example.yogendra.vivir.owner.updateFlatRecord;
 import com.example.yogendra.vivir.tenant.RegUserSearch;
 import com.example.yogendra.vivir.tenant.user_dashboard;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,11 +40,12 @@ import java.util.Map;
 
 public class flatDetails extends AppCompatActivity implements View.OnClickListener {
 
-    ViewPager viewPager;
+    //ViewPager viewPager;
     private ImageButton editAptBtn,delAptBtn;
     private Button bookAptBtn;
     private ProgressDialog progressDialog;
     private TextView aptAdd,AptOwner,ownerEmail,ownerContact,rentAmt;
+    private ImageView flatImage;
     SharedPrefManager sharedPrefManager_obj;
 
     @Override
@@ -65,10 +68,10 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
 
         }
 
-        viewPager = (ViewPager)findViewById(R.id.viewPager);
+       // viewPager = (ViewPager)findViewById(R.id.viewPager);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(viewPagerAdapter);
+        //ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+       // viewPager.setAdapter(viewPagerAdapter);
 
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Processing...");
@@ -78,6 +81,7 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
         ownerEmail = (TextView)findViewById(R.id.ownerEmail);
         ownerContact = (TextView)findViewById(R.id.ownerContact);
         rentAmt = (TextView)findViewById(R.id.aptRent);
+        flatImage = findViewById(R.id.flat_image);
 
         // BUTTON FOR ACTIVATING ACTIVITIES
         editAptBtn = findViewById(R.id.editApt);
@@ -116,6 +120,7 @@ public class flatDetails extends AppCompatActivity implements View.OnClickListen
                                 ownerContact.setText(obj.getString("contact"));
                                 rentAmt.setText("Rs. "+obj.getString("rentAmt")+"/month"+" , "+
                                         obj.getString("aptType")+" BHK");
+                                Picasso.with(getApplicationContext()).load(obj.getString("imageUrl")).into(flatImage);
 
                             }
                             else

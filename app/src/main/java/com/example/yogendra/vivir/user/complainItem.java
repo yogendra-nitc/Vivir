@@ -7,61 +7,54 @@ package com.example.yogendra.vivir.user;
 
 
 public class complainItem  {
-    private String rid;
-    private String name;
-    private String rtype;
-    private String rdate;
-    private int image;
+    private String cid;
+    private String sname;
+    private String rname;
+    private String cdate;
 
-    public complainItem(String cid,String sname, String rname, String rdate,
-                       int image) {
-        this.rid = rid;
-        this.name = name;
-        this.rtype = rtype;
-        this.rdate = rdate;
-        this.image = image;
+    public complainItem(String cid,String sname, String rname, String cdate
+                       ) {
+        this.cid = cid;
+        this.sname = sname;
+        this.rname = rname;
+        this.cdate = cdate;
     }
 
     //Getters
-    public String getId() {
-        return rid;
+
+
+    public String getCid() {
+        return cid;
     }
 
-    public String getName() {
-        return name;
+    public String getSname() {
+        return sname;
     }
 
-    public String getRtype() {
-        return rtype;
+    public String getRname() {
+        return rname;
     }
 
-    public String getRdate() {
-        return rdate;
-    }
-
-    public int getImage() {
-        return image;
+    public String getCdate() {
+        return cdate;
     }
 
     //Setters
-    public void setName(String name) {
-        this.name = name;
+
+
+    public void setCid(String cid) {
+        this.cid = cid;
     }
 
-    public void setId(String id) {
-        this.rid = id;
+    public void setSname(String sname) {
+        this.sname = sname;
     }
 
-    public void setRtype(String rtype) {
-        this.rtype = rtype;
+    public void setRname(String rname) {
+        this.rname = rname;
     }
 
-    public void setRdate(String rdate) {
-        this.rdate = rdate;
+    public void setCdate(String cdate) {
+        this.cdate = cdate;
     }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
 }

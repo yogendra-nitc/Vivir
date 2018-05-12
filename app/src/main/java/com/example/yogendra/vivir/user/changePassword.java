@@ -78,6 +78,8 @@ public class changePassword extends AppCompatActivity implements View.OnClickLis
                     public void onErrorResponse(VolleyError error) {
                         progressDialog.hide();
                         Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                        finish();
+                        startActivity(getIntent());
                     }
                 }){
             @Override
