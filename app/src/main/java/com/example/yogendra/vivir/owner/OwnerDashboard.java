@@ -20,6 +20,7 @@ import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
 import com.example.yogendra.vivir.main.finder;
 import com.example.yogendra.vivir.tenant.RegUserSearch;
+import com.example.yogendra.vivir.user.complain;
 import com.example.yogendra.vivir.user.notification;
 import com.squareup.picasso.Picasso;
 
@@ -147,7 +148,8 @@ public class OwnerDashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_complaints)
         {
-            Toast.makeText(getApplicationContext(),"Add this link",Toast.LENGTH_LONG).show();
+            Intent in = new  Intent(OwnerDashboard.this , complain.class);
+            startActivity(in);
         }
         else if (id == R.id.nav_request)
         {

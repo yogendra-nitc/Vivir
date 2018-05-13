@@ -77,15 +77,6 @@ public class finder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_finder, container, false);
-        Button rentDetails;
-        rentDetails = view.findViewById(R.id.upload_rent_details);
-        rentDetails.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent in = new  Intent(getActivity() , uploadRentDetails.class);
-                startActivity(in);
-            }
-        });
         return view;
     }
     // TODO: Rename method, update argument and hook method into UI event

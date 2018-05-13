@@ -26,4 +26,7 @@ public class defConstant {
     public  static  final String URL_getNotifications = ROOT_URL + "getNotification.php";
     public  static  final String URL_FILL_RENT = ROOT_URL + "fillRent.php";
     public  static  final String URL_LEAVE_FLAT = ROOT_URL + "leaveFlat.php";
+    public  static  final String URL_ALL_COMPLAIN = ROOT_URL + "getComplain.php";
+    public  static  final String URL_Write_Complain= ROOT_URL + "writeComplain.php";
+    public  static  final String URL_Complain_Details= ROOT_URL + "complainDetails.php";
 }

@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements home.OnFragmentIn
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
-        tabLayout.addTab(tabLayout.newTab().setText("Search"));
-        tabLayout.addTab(tabLayout.newTab().setText("Finder"));
+        tabLayout.addTab(tabLayout.newTab().setText("Flats"));
+        tabLayout.addTab(tabLayout.newTab().setText("About Us"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());

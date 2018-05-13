@@ -4,12 +4,51 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context="com.example.yogendra.vivir.main.finder">
-        <Button
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Upload Rent Details"
-            android:id="@+id/upload_rent_details"
-            android:clickable="true"
-            android:layout_marginBottom="5dp"
-            />
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/yogendra"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Name : Yogendra Maurya"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Email : steptostep93@gmail.com"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Contact : +91-8756599838"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="Address : National Institute of Technology, Calicut, Kerala, India - 673601"
+                    />
+
+        </LinearLayout>
+        </ScrollView>
 </LinearLayout>

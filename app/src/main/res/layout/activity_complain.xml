@@ -13,4 +13,16 @@ tools:context="com.example.yogendra.vivir.user.complain">
     android:id="@+id/complainResult"
     android:fadeScrollbars="true">
 </android.support.v7.widget.RecyclerView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/write_complain"
+        android:onClick="writeComplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        app:backgroundTint="#93C7CF"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 </RelativeLayout>

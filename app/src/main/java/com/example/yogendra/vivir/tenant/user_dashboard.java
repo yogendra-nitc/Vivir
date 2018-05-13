@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.yogendra.vivir.database.SharedPrefManager;
 import com.example.yogendra.vivir.main.MainActivity;
 import com.example.yogendra.vivir.R;
+import com.example.yogendra.vivir.user.complain;
 import com.example.yogendra.vivir.user.notification;
 import com.squareup.picasso.Picasso;
 
@@ -141,7 +142,8 @@ public class user_dashboard extends AppCompatActivity
         }
         else if (id == R.id.nav_query)
         {
-            Toast.makeText(getApplicationContext(), "write complain",Toast.LENGTH_LONG).show();
+            Intent in = new  Intent(user_dashboard.this , complain.class);
+            startActivity(in);
         }
         else if (id == R.id.nav_leaving)
         {

@@ -96,7 +96,19 @@
             android:label="Leave Flat"
             android:parentActivityName=".tenant.user_dashboard"
             android:theme="@style/RestAppTheme" />
-        <activity android:name=".user.complain"></activity>
+        <activity android:name=".user.complain"
+            android:theme="@style/RestAppTheme"
+            android:label="Complaints"
+            android:parentActivityName=".tenant.user_dashboard"/>
+        <activity android:name=".user.complainDetails"
+            android:theme="@style/RestAppTheme"
+            android:label="Complaint"
+            android:parentActivityName=".user.complain"
+            />
+        <activity android:name=".user.writeComplain"
+            android:theme="@style/RestAppTheme"
+            android:label="Write Complaint"
+            android:parentActivityName=".user.complain"/>
     </application>
 
 </manifest>
