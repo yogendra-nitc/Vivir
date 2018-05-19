@@ -68,6 +68,8 @@ public class writeComplain extends AppCompatActivity implements View.OnClickList
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                                 Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                                finish();
+                                startActivity(getIntent());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

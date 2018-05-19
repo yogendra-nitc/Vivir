@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yogendra.vivir.user.profileImage"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:id="@+id/buttonChoose"
+        android:layout_width="match_parent"
+        android:background="#93C7CF"
+        android:layout_height="50dp"
+        android:text="Select" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_marginTop="30dp"
+        android:hint="Name For Image"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
+
+    <Button
+        android:id="@+id/buttonUpload"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#93C7CF"
+        android:text="Upload" />
+
+</LinearLayout>
+
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+
+</LinearLayout>

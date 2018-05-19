@@ -15,7 +15,6 @@ package com.example.yogendra.vivir.adapter;
         import com.example.yogendra.vivir.R;
         import com.example.yogendra.vivir.user.complainDetails;
         import com.example.yogendra.vivir.user.complainItem;
-
         import java.util.ArrayList;
         import java.util.List;
 

@@ -29,4 +29,6 @@ public class defConstant {
     public  static  final String URL_ALL_COMPLAIN = ROOT_URL + "getComplain.php";
     public  static  final String URL_Write_Complain= ROOT_URL + "writeComplain.php";
     public  static  final String URL_Complain_Details= ROOT_URL + "complainDetails.php";
+    public static final String UPLOAD_URL = ROOT_URL + "upload.php";
+    public static final String IMAGES_URL = ROOT_URL+ "getImages.php";
 }

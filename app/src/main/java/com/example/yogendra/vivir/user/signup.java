@@ -77,8 +77,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
                             JSONObject jsonObject = new JSONObject(response);
                             Toast.makeText(getApplicationContext(),jsonObject.getString("message"),Toast.LENGTH_LONG).show();
                             finish();
-                            Intent in = new Intent(getApplicationContext(),MainActivity.class);
-                            startActivity(in);
+                            startActivity(getIntent());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
