@@ -4,7 +4,7 @@
     class Apartment extends Database{
     	public function myApartments($ownerId)
     	{
-    		$sql = "SELECT * FROM apartment as A,image as I where A.ownerid = '$ownerId' and A.aptId = I.aptId";
+    		$sql = "SELECT * FROM apartment where ownerid = '$ownerId'";
         	$result = $this->connect()->query($sql);
           return $result;
     	}
@@ -44,16 +44,16 @@
 
     		$sql = "INSERT INTO apartment(aptId, aptName,locality, city,ownerid,aptType,rentAmt) VALUES('$aptId','$aptName','$locality','$city','$ownerId','$aptType','$rentAmt')";
     		$res1 = $this->connect()->query($sql);
-    		$sql = "INSERT INTO image(aptId)VALUES('$aptId')";
-    		$res2 = $this->connect()->query($sql);
-    		if($res1 and $res2)
+    		//$sql = "INSERT INTO image(aptId)VALUES('$aptId')";
+    	//	$res2 = $this->connect()->query($sql);
+    		if($res1)
     			return $aptId;
     		else 
     			return -1; 
     	}
 // Method for adding apartment image
 
-    	public function aptImage($img1, $img2, $img3)
+    /*	public function aptImage($img1, $img2, $img3)
     	{
     		$sql = "INSERT INTO image(aptId,img1,img2,img3)VALUES('$aptId','$img1','$img2','$img3')";
     		$res = $this->connect()->query($sql);
@@ -62,7 +62,7 @@
     			return true;
     		else
     			return false;
-    	}
+    	}*/
     	
 // ********************  EDITING APARTMENT DETAILS ***************************
 
