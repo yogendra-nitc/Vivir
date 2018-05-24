@@ -18,9 +18,10 @@
         				$response['ownerid']   =  $data['ownerid'];
         				$response['aptType']   =  $data['aptType'];
         				$response['rentAmt']   =  $data['rentAmt'];
-        				$response['img1'] 	   =  $data['img1'];
-        				$response['img2']      =  $data['img2'] ;
-        				$response['img3']      =  $data['img3'];
+        				$url = "https://vivir18.000webhostapp.com/vivir/media/".$data['img'];
+        				$response['imageUrl'] 	   =  $url;
+        				//$response['img2']      =  $data['img2'] ;
+        				//$response['img3']      =  $data['img3'];
 			}
 			else
 			{
