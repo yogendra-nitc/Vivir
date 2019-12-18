@@ -1,2 +1,2 @@
 # Vivir
-Document repository
+Document directory
